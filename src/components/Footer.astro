@@ -1,106 +1,50 @@
 ---
-interface Props {
-  lang: "en" | "zh";
-}
-
-const { lang } = Astro.props;
-const t = lang === "zh"
-  ? { company: "源美印刷", desc: "定制包装制造商 — 中国广东省东莞市", quickLinks: "快速链接", contact: "联系方式", home: "首页", products: "产品", about: "关于我们", contactLink: "联系我们", email: "josh@ymys0769.com", copyright: "© 2008–2026 广东东莞源美印刷厂 版权所有" }
-  : { company: "YUANMEI PRINTING", desc: "Custom packaging manufacturer — Dongguan, Guangdong, China", quickLinks: "Quick Links", contact: "Contact", home: "Home", products: "Products · Cases", about: "About Us", contactLink: "Contact", email: "josh@ymys0769.com", copyright: "© 2008–2026 Guangdong Dongguan Yuanmei Printing Factory. All rights reserved." };
+const email = "josh@ymys0769.com";
 ---
 
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h4>{t.company}</h4>
-        <p>{t.desc}</p>
+        <h4>YUANMEI PRINTING</h4>
+        <p>Custom packaging manufacturer — Dongguan, Guangdong, China</p>
       </div>
       <div>
-        <h4>{t.quickLinks}</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href={`/${lang}/`}>{t.home}</a></li>
-          <li><a href={`/${lang}/products/`}>{t.products}</a></li>
-          <li><a href={`/${lang}/about/`}>{t.about}</a></li>
-          <li><a href={`/${lang}/case-studies/`}>{lang==="zh"?"案例":"Case Studies"}</a></li>
-          <li><a href={`/${lang}/blog/`}>{lang==="zh"?"博客":"Blog"}</a></li>
-          <li><a href={`/${lang}/faq/`}>FAQ</a></li>
-          <li><a href={`/${lang}/privacy/`}>{lang==="zh"?"隐私政策":"Privacy"}</a></li>
-          <li><a href={`/${lang}/contact/`}>{t.contactLink}</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products/">Products · Cases</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>{t.contact}</h4>
+        <h4>Contact</h4>
         <ul>
-          <li>Email: <a href={`mailto:${t.email}`}>{t.email}</a></li>
+          <li>Email: <a href={`mailto:${email}`}>{email}</a></li>
           <li>WhatsApp: +86 13532861588</li>
           <li>Dongguan, Guangdong, China</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>{t.copyright}</p>
+      <p>&copy; 2008–2026 Guangdong Dongguan Yuanmei Printing Factory. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <style>
-  .footer {
-    background: var(--purple-bg);
-    color: #94a3b8;
-    padding: 64px 0 32px;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 40px;
-  }
-
-  .footer h4 {
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
-
-  .footer p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .footer ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer ul li {
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-
-  .footer a {
-    color: #94a3b8;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer a:hover {
-    color: var(--purple-light);
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
-    text-align: center;
-    font-size: 13px;
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-  }
+  .footer { background: var(--purple-bg); color: #94a3b8; padding: 64px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+  .footer h4 { color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+  .footer p { font-size: 14px; line-height: 1.7; }
+  .footer ul { list-style: none; padding: 0; }
+  .footer ul li { margin-bottom: 8px; font-size: 14px; }
+  .footer a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+  .footer a:hover { color: var(--purple-light); }
+  .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; text-align: center; font-size: 13px; max-width: 1100px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
 </style>

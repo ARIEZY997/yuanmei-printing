@@ -15,14 +15,14 @@ const { currentPath } = Astro.props;
     </a>
 
     <ul class="nav-links">
-      <li><a href="/en/" class={`nav-underline ${currentPath === "/en/" ? "active" : ""}`}>Home</a></li>
-      <li><a href="/en/products/" class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>Products · Cases</a></li>
-      <li><a href="/en/about/" class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>About</a></li>
-      <li><a href="/en/contact/" class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>Contact</a></li>
+      <li><a href="/" class={`nav-underline ${currentPath === "/" ? "active" : ""}`}>Home</a></li>
+      <li><a href="/products/" class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>Products · Cases</a></li>
+      <li><a href="/about/" class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>About</a></li>
+      <li><a href="/contact/" class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>Contact</a></li>
     </ul>
 
     <div class="nav-actions">
-      <a href="/en/contact/" class="btn btn-primary nav-cta btn-ripple">Get Quote</a>
+      <a href="/contact/" class="btn btn-primary nav-cta btn-ripple">Get Quote</a>
     </div>
   </div>
 </nav>

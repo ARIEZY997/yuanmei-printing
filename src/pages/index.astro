@@ -1,12 +1,246 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0;url=/en/" />
-  <title>Yuanmei Printing — Custom Packaging Manufacturer</title>
-  <link rel="canonical" href="/en/" />
-</head>
-<body>
-  <p>Redirecting to <a href="/en/">English site</a>…</p>
-</body>
-</html>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import en from "../i18n/en.json";
+
+const t = en;
+const currentPath = "/";
+const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":t.home.faq.items.map((item:any)=>({"@type":"Question","name":item.question,"acceptedAnswer":{"@type":"Answer","text":item.answer}}))});
+---
+
+<BaseLayout title={t.site.title} description={t.site.description} lang="en" currentPath={currentPath} structuredData={faqSD}>
+<Nav lang="en" currentPath="/" />
+<main class="narrative-main">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero-brutal">
+      <div class="hb-bg"></div>
+      <!-- Geometric lines -->
+      <div class="hb-geo">
+        <div class="hb-geo-line geo-1"></div>
+        <div class="hb-geo-line geo-2"></div>
+        <div class="hb-geo-line geo-3"></div>
+        <div class="hb-geo-circle"></div>
+      </div>
+      <!-- Sparkle dots -->
+      <div class="hb-sparkles">
+        {Array.from({length:25}).map(()=>(<span class="hb-spark" style={`left:${60+Math.random()*35}%;top:${5+Math.random()*85}%;animation-delay:${Math.random()*4}s;width:${1+Math.random()*3}px;height:${1+Math.random()*3}px`}></span>))}
+      </div>
+      <div class="hb-content">
+        <div class="hb-logo-ring">
+          <img src="/images/公司LOGO.png" alt="Yuanmei Printing" class="hb-logo" />
+        </div>
+        <h1>We<br>Make<br>Boxes<span class="hb-dot">.</span></h1>
+        <div class="hb-line"></div>
+        <p class="hb-sub">Dongguan, China · Custom packaging since 2008</p>
+        <a href="/contact/" class="hb-cta">Start Your Project</a>
+      </div>
+      <div class="hb-scroll">↓</div>
+    </section>
+
+<!-- ═══ SECTION 2: MATERIALS ═══ -->
+<section id="materials-section" class="n-section materials-section">
+  <div class="section-sticky-header"><span class="n-label">Materials Speak</span><h2>The right surface <span class="accent">changes everything</span></h2></div>
+  <div class="cmyk-grid">
+    <div class="cmyk-block cmyk-cyan"><div class="cmyk-visual"><img src="/images/纸张纹理1.jpg" alt="Coated art paper" class="cmyk-img"/></div><span class="cmyk-tag">C</span><p>Coated Art Paper</p><small>Glossy. Precise. Vibrant.</small></div>
+    <div class="cmyk-block cmyk-magenta"><div class="cmyk-visual"><img src="/images/烫金.jpg" alt="Gold foil" class="cmyk-img"/></div><span class="cmyk-tag">M</span><p>Hot Foil Stamping</p><small>Gold. Silver. Holographic.</small></div>
+    <div class="cmyk-block cmyk-yellow"><div class="cmyk-visual"><img src="/images/牛皮纸纹理.jpg" alt="Kraft paper" class="cmyk-img"/></div><span class="cmyk-tag">Y</span><p>Kraft & Texture</p><small>Natural. Earthy. Honest.</small></div>
+    <div class="cmyk-block cmyk-black"><div class="cmyk-visual"><img src="/images/击凸工艺.jpg" alt="Embossed paper" class="cmyk-img"/></div><span class="cmyk-tag">K</span><p>Emboss & Deboss</p><small>Depth. Touch. Luxury.</small></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: CRAFT ═══ -->
+<section id="craft-section" class="n-section craft-section">
+  <div class="section-sticky-header"><span class="n-label">Where Boxes Are Born</span><h2>5 steps. <span class="accent">One roof.</span></h2></div>
+  <div class="craft-hscroll" id="craft-wrap">
+    {[
+{step:"01",title:"Design & Structure",desc:"Engineers turn your concept into a production-ready dieline — precise to 0.1mm.",img:null},
+          {step:"02",title:"CTP Plate Making",desc:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction.",img:null},
+          {step:"03",title:"Offset Printing",desc:"Komori G40 + Roland 700 + KBA. 5 presses running daily for consistent color.",img:"/images/小森机广角图.jpg",alt:"Komori Lithrone G40"},
+          {step:"04",title:"Die-Cutting & Creasing",desc:"3 automatic lines. Every cut, every crease — precise and repeatable.",img:null},
+          {step:"05",title:"Gluing & Quality Control",desc:"Hand-inspected. 80+ craftsmen. Every box checked before it ships.",img:"/images/广角工人工作图.jpg",alt:"Workers at gluing station"},
+    ].map((s)=>(
+    <div class="craft-panel">
+      <div class="craft-img">{s.img?<img src={s.img} alt={s.alt||s.title} class="craft-real-img"/>:<div class="craft-placeholder">{s.title}</div>}</div>
+      <div class="craft-info"><span class="craft-step">{s.step}</span><h3>{s.title}</h3><p>{s.desc}</p></div>
+    </div>))}
+  </div>
+  <div class="craft-scroll-hint">← Scroll to explore →</div>
+</section>
+
+<!-- ═══ SECTION 4: PRODUCTS ═══ -->
+<section id="products-section" class="n-section products-narrative">
+  <div class="section-sticky-header"><span class="n-label">What We Make</span><h2>Packaging that <span class="accent">sells before it's opened</span></h2></div>
+  <div class="product-narrative-grid">
+    {t.products.categories.map((cat:any,i:number)=>{const pi=["/images/部分产品图.png","/images/部分产品图2.png",null,null];return(
+    <div class="narrative-product-card">
+      <div class="np-img">{pi[i]?<img src={pi[i]} alt={cat.title} class="np-real-img"/>:<div class="np-placeholder">{cat.title}</div>}</div>
+      <div class="np-body"><h3>{cat.title}</h3><p>{cat.description}</p><ul>{cat.items.map((item:string)=><li>{item}</li>)}</ul></div>
+    </div>)})}
+  </div>
+</section>
+
+<!-- ═══ SECTION 5: GLOBAL ═══ -->
+<section id="global-section" class="n-section global-section">
+  <div class="section-sticky-header"><span class="n-label">Global Reach</span><h2>From <span class="accent">Dongguan</span> to your doorstep</h2></div>
+  <div class="global-map">
+    <div class="map-container">
+      <img src="/images/world-map.svg" alt="World map" class="world-map-img"/>
+      <div class="map-marker map-origin-marker" style="left:80%;top:40%;"><div class="map-pin"></div><div class="map-pin-ring"></div><span class="map-label map-label-origin">Dongguan</span></div>
+      <svg class="shipping-routes" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {[{x:15,y:35},{x:22,y:28},{x:47,y:30},{x:49,y:32},{x:84,y:34},{x:82,y:64},{x:68,y:44},{x:62,y:38},{x:30,y:48},{x:53,y:55},{x:81,y:32},{x:20,y:40}].map((d,i)=>(<path class="ship-route" d={`M80,40 Q${(80+d.x)/2},${(40+d.y)/2-i*2} ${d.x},${d.y}`} fill="none" stroke="var(--purple-light)" stroke-width="0.3" stroke-dasharray="2 3" opacity="0.5"/>))}
+      </svg>
+      {[{l:"15%",t:"35%",n:"USA"},{l:"22%",t:"28%",n:"Canada"},{l:"47%",t:"30%",n:"UK"},{l:"49%",t:"32%",n:"France"},{l:"84%",t:"34%",n:"Japan"},{l:"82%",t:"64%",n:"Australia"},{l:"68%",t:"44%",n:"India"},{l:"62%",t:"38%",n:"UAE"},{l:"30%",t:"48%",n:"Brazil"},{l:"53%",t:"55%",n:"S.Africa"},{l:"81%",t:"32%",n:"Korea"},{l:"20%",t:"40%",n:"Mexico"}].map((d)=>(<div class="map-marker map-dest" style={`left:${d.l};top:${d.t};`}><div class="map-dot-small"></div><span class="map-dest-label">{d.n}</span></div>))}
+    </div>
+    <div class="global-stats"><div class="g-stat"><strong>40+</strong><span>Countries</span></div><div class="g-stat"><strong>18</strong><span>Years</span></div><div class="g-stat"><strong>2M+</strong><span>Boxes/Year</span></div><div class="g-stat"><strong>DDP</strong><span>Shipping</span></div></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: CTA ═══ -->
+<section id="cta-section" class="n-section cta-section-n">
+  <div class="cta-bg"></div>
+  <div class="cta-content"><p class="cta-pre">Ready to begin?</p><h2>Your box <span class="accent">starts here</span></h2><p class="cta-desc">Tell us your idea. We'll make it real — from first sketch to final delivery.</p><a href="/contact/" class="btn btn-primary btn-ripple btn-xl">Start Your Box →</a></div>
+</section>
+
+</main>
+<Footer/>
+</BaseLayout>
+
+<style>
+.narrative-main{background:#0a0a0f;color:#e0dce8}
+.n-section{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:120px 24px;overflow:hidden}
+.n-label{font-size:13px;text-transform:uppercase;letter-spacing:4px;color:var(--purple-light);margin-bottom:16px;display:block;font-weight:600}
+.section-sticky-header{text-align:center;margin-bottom:64px;position:sticky;top:120px;z-index:2}
+.section-sticky-header h2{font-family:var(--font-display);font-size:clamp(40px,7vw,72px);font-weight:900;color:#e0dce8;line-height:1.08;letter-spacing:-2px}
+.accent{color:var(--purple-light)}
+
+/* ── Hero: Brutal Typography ── */
+.hero-brutal{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a0a0f;padding:80px 24px}
+.hb-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(124,58,237,0.06) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(74,29,139,0.04) 0%,transparent 50%)}
+.hb-content{position:relative;z-index:1;max-width:1000px;width:100%}
+.hb-logo-ring{width:100px;height:100px;border-radius:50%;overflow:hidden;margin-bottom:40px;border:2px solid rgba(124,58,237,0.3);box-shadow:0 0 30px rgba(124,58,237,0.2)}
+.hb-logo{width:100%;height:100%;object-fit:contain;background:var(--white);padding:8px}
+.hb-overline{font-size:12px;letter-spacing:4px;color:var(--purple-light);text-transform:uppercase;margin-bottom:32px}
+.hb-content h1{font-family:var(--font-display);font-size:clamp(88px,14vw,170px);font-weight:900;line-height:0.85;color:#e8e4f0;letter-spacing:-5px;text-transform:uppercase;margin-bottom:24px}
+.hb-dot{color:var(--purple-light)}
+.hb-line{width:100px;height:2px;background:var(--purple-light);margin-bottom:28px}
+.hb-sub{font-size:17px;color:#6b7280;margin-bottom:40px;max-width:400px}
+.hb-cta{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--white);background:var(--purple);padding:16px 36px;border-radius:6px;text-decoration:none;letter-spacing:1px;transition:all .2s}
+.hb-cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+/* Geo lines */
+.hb-geo{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hb-geo-line{position:absolute;background:rgba(124,58,237,0.08)}
+.geo-1{right:8%;top:0;width:1px;height:100%}
+.geo-2{right:16%;top:0;width:1px;height:100%}
+.geo-3{right:0;top:40%;width:20%;height:1px}
+.hb-geo-circle{position:absolute;right:12%;top:45%;width:200px;height:200px;border:1px solid rgba(124,58,237,0.06);border-radius:50%}
+/* Sparkles */
+.hb-sparkles{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hb-spark{position:absolute;background:var(--purple-light);border-radius:50%;animation:spark-pulse 3s ease-in-out infinite}
+@keyframes spark-pulse{0%,100%{opacity:0.1;transform:scale(1)}50%{opacity:0.8;transform:scale(2.5)}}
+.hb-scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:14px;color:#6b7280;animation:hb-bounce 2s ease-in-out infinite}
+@keyframes hb-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@media(max-width:640px){.hb-content h1{font-size:56px;letter-spacing:-2px}}
+
+/* ── Materials ── */
+.materials-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
+.cmyk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;width:100%}
+.cmyk-block{position:relative;border-radius:16px;text-align:center;border:1px solid rgba(255,255,255,0.06);overflow:hidden}
+.cmyk-block:hover{border-color:var(--purple-light)}
+.cmyk-visual{height:380px;overflow:hidden}
+.cmyk-img{width:100%;height:100%;object-fit:cover}
+.cmyk-tag{position:absolute;top:16px;right:16px;font-family:var(--font-display);font-size:48px;font-weight:900;opacity:.25;z-index:1}
+.cmyk-cyan .cmyk-tag{color:#38bdf8}
+.cmyk-magenta .cmyk-tag{color:#f472b6}
+.cmyk-yellow .cmyk-tag{color:#facc15}
+.cmyk-black .cmyk-tag{color:#6b7280}
+.cmyk-block p{font-size:18px;font-weight:600;color:#e0dce8;margin:16px 20px 4px}
+.cmyk-block small{font-size:14px;color:#6b7280;display:block;margin:0 20px 20px}
+
+/* ── Craft ── */
+.craft-section{padding:120px 0 40px;background:linear-gradient(180deg,#110d1a,#0a0a0f)}
+.craft-hscroll{display:flex;gap:0;padding-left:24px;will-change:transform}
+.craft-panel{flex:0 0 min(90vw,580px);padding:0 20px}
+.craft-img{height:420px;border-radius:16px;overflow:hidden;margin-bottom:28px;border:1px solid rgba(255,255,255,0.08)}
+.craft-real-img{width:100%;height:100%;object-fit:cover}
+.craft-placeholder{height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(74,29,139,0.05));font-family:var(--font-display);font-size:22px;font-weight:700;color:rgba(124,58,237,0.3)}
+.craft-info{padding:0 8px}
+.craft-step{font-family:var(--font-display);font-size:96px;font-weight:900;color:var(--purple);opacity:.2;line-height:.85;letter-spacing:-3px}
+.craft-info h3{font-size:26px;font-weight:700;color:#e0dce8;margin:8px 0}
+.craft-info p{font-size:15px;color:#9ca3af;line-height:1.7}
+.craft-scroll-hint{text-align:center;margin-top:40px;font-size:13px;color:#6b7280;letter-spacing:2px}
+
+/* ── Products ── */
+.products-narrative{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
+.product-narrative-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1100px;width:100%}
+.narrative-product-card{position:relative;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden}
+.np-img{height:320px;overflow:hidden}
+.np-real-img{width:100%;height:100%;object-fit:cover}
+.np-placeholder{height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(74,29,139,0.04));font-family:var(--font-display);font-size:20px;font-weight:700;color:rgba(124,58,237,0.25)}
+.np-body{padding:24px}
+.np-body h3{font-size:20px;font-weight:700;color:#e0dce8;margin-bottom:8px}
+.np-body p{font-size:14px;color:#9ca3af;line-height:1.6;margin-bottom:12px}
+.np-body ul{list-style:none;padding:0}
+.np-body li{font-size:13px;color:#6b7280;padding:3px 0}
+.np-body li::before{content:"→ ";color:var(--purple-light)}
+
+/* ── Global ── */
+.global-section{background:linear-gradient(180deg,#110d1a,#0a0a0f);display:flex;align-items:center}
+.global-map{max-width:1000px;width:100%;text-align:center}
+.map-container{position:relative;width:100%}
+.world-map-img{width:100%;height:auto;filter:invert(1) opacity(0.06)}
+.map-marker{position:absolute}
+.map-origin-marker{transform:translate(-50%,-50%);z-index:2}
+.map-pin{width:16px;height:16px;background:var(--purple);border-radius:50%;box-shadow:0 0 20px rgba(124,58,237,1),0 0 40px rgba(124,58,237,0.5)}
+.map-pin-ring{position:absolute;top:-8px;left:-8px;width:32px;height:32px;border:1.5px solid var(--purple);border-radius:50%;opacity:.5;animation:pin-ring 2.5s ease-out infinite}
+@keyframes pin-ring{0%{transform:scale(0.8);opacity:.8}100%{transform:scale(2.5);opacity:0}}
+.map-label{position:absolute;left:20px;top:-4px;font-size:11px;font-weight:700;color:var(--purple-light);white-space:nowrap}
+.map-label-origin{font-size:13px}
+.map-dest{transform:translate(-50%,-50%)}
+.map-dot-small{width:7px;height:7px;background:var(--purple-light);border-radius:50%;opacity:0;transition:opacity .5s}
+.map-dest-label{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--purple-light);opacity:0;white-space:nowrap;transition:opacity .5s}
+.shipping-routes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.ship-route{stroke-dasharray:200;stroke-dashoffset:200}
+.global-stats{display:flex;justify-content:center;gap:48px;margin-top:40px}
+.g-stat{text-align:center}
+.g-stat strong{display:block;font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--purple-light)}
+.g-stat span{font-size:13px;color:#6b7280}
+
+/* ── CTA ── */
+.cta-section-n{background:#0a0a0f;position:relative;text-align:center;min-height:80vh;justify-content:center}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(124,58,237,0.12) 0%,transparent 60%)}
+.cta-content{position:relative;z-index:1;max-width:640px}
+.cta-pre{font-size:13px;letter-spacing:3px;color:var(--purple-light);text-transform:uppercase;margin-bottom:16px}
+.cta-content h2{font-family:var(--font-display);font-size:clamp(40px,7vw,72px);font-weight:900;color:#e0dce8;line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
+.cta-desc{font-size:17px;color:#9ca3af;margin-bottom:40px}
+.btn-xl{padding:20px 48px;font-size:18px;border-radius:12px}
+
+@media(max-width:768px){.cmyk-grid{grid-template-columns:repeat(2,1fr)}.product-narrative-grid{grid-template-columns:1fr}.global-stats{flex-wrap:wrap;gap:24px}.craft-panel{flex:0 0 85vw}.hero-narrative{min-height:200vh}.hn-layer-2 h1{font-size:28px}.hn-stats{flex-wrap:wrap;gap:16px}.hn-stat-div{display:none!important}}
+@media(max-width:480px){.cmyk-grid{grid-template-columns:1fr}}
+</style>
+
+<script>
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+// ── Materials ──
+document.querySelectorAll("#materials-section .cmyk-block").forEach((b:any,i:number)=>{gsap.from(b,{scrollTrigger:{trigger:"#materials-section",start:"top 60%",toggleActions:"play none none reverse"},x:i%2===0?-80:80,opacity:0,duration:.7,delay:i*.15,ease:"power3.out"})});
+
+// ── Craft horizontal scroll ──
+const panels=document.querySelectorAll("#craft-section .craft-panel") as NodeListOf<HTMLElement>;
+if(panels.length>1){const pw=panels[0].offsetWidth+40;gsap.to(panels,{x:(i:number)=>-i*pw,ease:"none",scrollTrigger:{trigger:"#craft-section",pin:true,start:"top top",end:()=>`+=${(panels.length-1)*pw}`,scrub:1.2}})}
+
+// ── Products ──
+document.querySelectorAll("#products-section .narrative-product-card").forEach((c:any,i:number)=>{gsap.from(c,{scrollTrigger:{trigger:"#products-section",start:"top 55%",toggleActions:"play none none reverse"},y:60,opacity:0,duration:.6,delay:i*.15,ease:"power3.out"})});
+
+// ── Global routes + dots ──
+const routes=document.querySelectorAll("#global-section .ship-route");
+const dests=document.querySelectorAll("#global-section .map-dest");
+if(routes.length){const rt=gsap.timeline({scrollTrigger:{trigger:"#global-section",start:"top 55%",toggleActions:"play none none reverse"}});routes.forEach((r:any,i:number)=>{const len=r.getTotalLength?r.getTotalLength():200;r.style.strokeDasharray=String(len);r.style.strokeDashoffset=String(len);rt.to(r,{strokeDashoffset:0,duration:.6,ease:"power2.out"},i*.04)});dests.forEach((d:any,i:number)=>{const dot=d.querySelector(".map-dot-small"),label=d.querySelector(".map-dest-label");rt.fromTo(dot,{opacity:0,scale:0},{opacity:.8,scale:1,duration:.3,ease:"back.out(2)"},.5+i*.05);rt.fromTo(label,{opacity:0},{opacity:.8,duration:.3},.6+i*.05)})}
+
+// ── CTA parallax ──
+gsap.to("#cta-section .cta-bg",{scrollTrigger:{trigger:"#cta-section",start:"top bottom",end:"bottom top",scrub:1},y:-80});
+window.addEventListener("resize",()=>ScrollTrigger.refresh());
+</script>

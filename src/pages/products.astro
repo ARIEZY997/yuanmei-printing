@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Nav from "../../components/Nav.astro";
-import Footer from "../../components/Footer.astro";
-import ProductGrid from "../../components/ProductGrid.astro";
-import en from "../../i18n/en.json";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+import en from "../i18n/en.json";
 
 const t = en;
 const currentPath = "/en/products/";
@@ -54,7 +54,7 @@ const currentPath = "/en/products/";
 </section>
 </main>
 
-<Footer lang="en"/>
+<Footer/>
 </BaseLayout>
 
 <style>
