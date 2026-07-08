@@ -1,0 +1,65 @@
+---
+interface Stat {
+  number: string;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+---
+
+<section class="stats">
+  <div class="container">
+    {
+      Astro.props.stats.map((stat) => (
+        <div class="stat-item">
+          <div class="stat-number stat-counting" data-count={stat.number}>{stat.number}</div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .stats {
+    background: var(--purple);
+    padding: 48px 0;
+  }
+
+  .stats .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .stats .container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .stat-number {
+      font-size: 32px;
+    }
+  }
+</style>

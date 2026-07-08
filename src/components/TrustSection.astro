@@ -1,0 +1,63 @@
+---
+interface TrustItem {
+  title: string;
+  desc: string;
+}
+
+interface Props {
+  items: TrustItem[];
+  sectionLabel: string;
+  sectionTitle: string;
+}
+
+const { items, sectionLabel, sectionTitle } = Astro.props;
+---
+
+<section class="section section-alt">
+  <div class="container">
+    <span class="section-label">{sectionLabel}</span>
+    <h2 class="section-title">{sectionTitle}</h2>
+    <div class="trust-grid" data-reveal-stagger="150">
+      {items.map((item) => (
+        <div class="trust-card hover-lift glow-hover" data-reveal>
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .trust-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    transition: box-shadow 0.2s;
+  }
+
+  .trust-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .trust-card h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--purple-deep);
+    margin-bottom: 10px;
+  }
+
+  .trust-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+</style>

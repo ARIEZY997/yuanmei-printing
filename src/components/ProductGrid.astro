@@ -1,0 +1,105 @@
+---
+interface Category {
+  key: string;
+  title: string;
+  description: string;
+  items: string[];
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+  <div class="product-grid" data-reveal-stagger="120">
+  {
+    categories.map((cat) => (
+      <article class="product-card hover-lift" data-tilt data-reveal>
+        <div class="product-img">
+          <div class="product-img-inner">{cat.title}</div>
+        </div>
+        <div class="product-body">
+          <h3>{cat.title}</h3>
+          <p>{cat.description}</p>
+          <ul>
+            {cat.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))
+  }
+</div>
+
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--purple-light);
+  }
+
+  .product-img {
+    height: 200px;
+    background: linear-gradient(135deg, #f0edf7, #e8e0f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-img-inner {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .product-body {
+    padding: 24px;
+  }
+
+  .product-body h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .product-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .product-body ul {
+    list-style: none;
+  }
+
+  .product-body li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+  }
+
+  .product-body li::before {
+    content: "✓ ";
+    color: var(--purple);
+    font-weight: 700;
+  }
+</style>

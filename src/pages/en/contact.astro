@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import en from "../../i18n/en.json";
+
+const t = en;
+const currentPath = "/en/contact/";
+---
+
+<BaseLayout
+  title={`Contact — ${t.site.title}`}
+  description="Request a free quotation for custom packaging. Food boxes, gift boxes, shipping boxes. Fast turnaround, low MOQ, global delivery."
+  lang="en"
+  currentPath={currentPath}
+>
+  <Nav lang="en" currentPath={currentPath} />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-reveal="fade">{t.contact.title}</h1>
+        <p data-reveal="fade">{t.contact.description}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-form-wrap">
+            <ContactForm form={t.contact.form} />
+          </div>
+          <aside class="contact-info">
+            <h3>{t.contact.info.title}</h3>
+            <div class="info-item">
+              <strong>Email</strong>
+              <a href={`mailto:${t.contact.info.email}`}>{t.contact.info.email}</a>
+            </div>
+            <div class="info-item">
+              <strong>WhatsApp / WeChat</strong>
+              <span>{t.contact.info.whatsapp}</span>
+            </div>
+            <div class="info-item">
+              <strong>Address</strong>
+              <span>{t.contact.info.address}</span>
+            </div>
+            <div class="info-item">
+              <strong>Business Hours</strong>
+              <span>{t.contact.info.hours}</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 140px 0 64px;
+    background: linear-gradient(135deg, var(--purple-bg), #2D1250);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .page-hero p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    padding: 32px 0 0 32px;
+    border-left: 1px solid var(--border);
+  }
+
+  .contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+
+  .info-item {
+    margin-bottom: 20px;
+  }
+
+  .info-item strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .info-item span,
+  .info-item a {
+    font-size: 15px;
+    color: var(--text-primary);
+  }
+
+  .info-item a {
+    color: var(--purple);
+    text-decoration: none;
+  }
+
+  .info-item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      padding: 32px 0 0 0;
+    }
+
+    .page-hero h1 {
+      font-size: 28px;
+    }
+  }
+</style>

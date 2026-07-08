@@ -1,0 +1,165 @@
+{
+  "site": {
+    "title": "Yuanmei Printing — Custom Packaging Manufacturer | Dongguan, China",
+    "description": "18 years of custom box manufacturing. Food packaging, gift boxes, corrugated boxes, color cards. ISO-certified, 50+ skilled workers, global delivery.",
+    "ogImage": "/images/og-image.jpg"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "language": "中文"
+  },
+  "home": {
+    "hero": {
+      "badge": "18 Years of Trust · Dongguan, China",
+      "title1": "Custom Packaging",
+      "title2": "Manufacturer",
+      "titleHighlight": "Since 2008",
+      "description": "From concept to delivery — custom printed boxes, food-grade packaging, and premium gift boxes. 5 large presses, 50 skilled craftsmen, ISO-certified production.",
+      "ctaPrimary": "Get Free Quotation",
+      "ctaSecondary": "View Products"
+    },
+    "stats": [
+      { "number": "18+", "label": "Years Experience" },
+      { "number": "80+", "label": "Skilled Workers" },
+      { "number": "5", "label": "Large Presses" },
+      { "number": "40+", "label": "Export Countries" }
+    ],
+    "productsSection": {
+      "label": "What We Make",
+      "title": "Packaging Solutions for Global Brands",
+      "description": "Specializing in short to medium runs with fast turnaround. MOQ as low as 50 pieces per design.",
+      "cta": "View All Products"
+    },
+    "trustSection": {
+      "label": "Why Choose Us",
+      "title": "Reliable Partner, Consistent Quality",
+      "items": [
+        { "title": "18 Years Experience", "desc": "Founded in 2008, serving 40+ countries with deep packaging expertise. Annual capacity: 2 million+ boxes." },
+        { "title": "In-House Production", "desc": "5 large offset presses (Komori & Roland), prepress, die-cutting, gluing — all under one roof." },
+        { "title": "Food-Grade Certified", "desc": "FDA and EU food contact compliant materials. Strict quality control at every stage." },
+        { "title": "Low MOQ, Fast Delivery", "desc": "Starting from 50 pieces per design. 7–15 day production turnaround with DDP shipping." }
+      ]
+    },
+    "ctaSection": {
+      "title": "Ready to Start Your Packaging Project?",
+      "description": "Tell us about your needs — we'll reply within 24 hours with a free quotation and design suggestions.",
+      "button": "Contact Us Now"
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Frequently Asked Questions",
+      "items": [
+        { "question": "What is your minimum order quantity (MOQ)?", "answer": "Our MOQ starts as low as 50 pieces per design for custom boxes. For larger or more complex orders, we're flexible — contact us to discuss your specific needs." },
+        { "question": "What materials and finishes do you offer?", "answer": "We work with grey board (1200gsm), coated art paper, kraft paper, duplex board, corrugated/E-flute, and more. Finishing options include hot foil stamping, spot UV, matte/gloss lamination, embossing, debossing, and soft touch coating." },
+        { "question": "How long does production take?", "answer": "Standard production takes 7–15 days depending on order complexity and quantity. Rush orders can be accommodated — please mention your timeline when inquiring." },
+        { "question": "Do you ship internationally? What shipping methods?", "answer": "Yes! We ship to 30+ countries worldwide. We offer sea freight, air freight, and DDP (Delivered Duty Paid) shipping for a hassle-free experience. Your dedicated account manager will help you choose the best option." },
+        { "question": "Can I get a sample before bulk production?", "answer": "Absolutely. We provide free pre-production samples so you can verify quality, materials, and design before committing to full production. Sample production typically takes 3–5 days." },
+        { "question": "Are your materials food-grade certified?", "answer": "Yes. Our food packaging materials comply with FDA 21 CFR and EU EC 1935/2004 regulations for direct and indirect food contact. We can provide certification documentation upon request." }
+      ]
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "description": "Browse our complete range of custom packaging solutions. Click any category to learn more or request a quote.",
+    "categories": [
+      {
+        "key": "food-packaging",
+        "title": "Food Packaging Boxes",
+        "description": "Food-grade custom packaging: strawberry punnets, chocolate boxes, pastry boxes. FDA and EU compliant materials.",
+        "items": ["Strawberry / fruit punnets", "Chocolate & confectionery boxes", "Bakery & pastry packaging", "Takeaway food containers"]
+      },
+      {
+        "key": "gift-boxes",
+        "title": "Custom Gift Boxes",
+        "description": "Premium rigid boxes, collapsible gift boxes, magnetic closure boxes. Perfect for cosmetics, jewelry, candles, and luxury goods.",
+        "items": ["Rigid magnetic closure boxes", "Collapsible gift boxes", "Candle & fragrance boxes", "Jewelry presentation boxes"]
+      },
+      {
+        "key": "shipping-boxes",
+        "title": "Corrugated & Shipping Boxes",
+        "description": "Custom-printed shipping boxes, mailer boxes, and e-commerce packaging. Built for protection and brand experience.",
+        "items": ["Mailer boxes (e-commerce)", "Custom shipping cartons", "Subscription box packaging", "Die-cut custom shapes"]
+      },
+      {
+        "key": "color-cards",
+        "title": "Color Cards & Inserts",
+        "description": "Product color cards, hang tags, instruction inserts, and promotional cards. With custom finishes and coatings.",
+        "items": ["Product color swatch cards", "Hang tags & swing tags", "Instruction inserts", "Promotional postcards"]
+      }
+    ]
+  },
+  "about": {
+    "title": "About Yuanmei Printing",
+    "description": "18 years of packaging excellence. From a small workshop to a trusted global manufacturer.",
+    "story": {
+      "title": "Our Story",
+      "content": "Founded in 2008 in Dongguan, Guangdong — China's manufacturing heartland — Yuanmei Printing has grown from a small workshop into a trusted packaging partner for brands across 30+ countries. We combine traditional craftsmanship with modern printing technology to deliver packaging that protects products and elevates brands."
+    },
+    "machinery": {
+      "title": "Our Machinery & Equipment",
+      "items": [
+        { "name": "Komori Lithrone G40", "desc": "5-color offset press with coater. Handles up to 720×1,030mm sheet size. High-speed precision printing for medium to large runs." },
+        { "name": "Roland 700 Series", "desc": "4-color offset press. Renowned for consistent color reproduction and quick job changeover. Ideal for short to medium runs." },
+        { "name": "Die-Cutting Machines", "desc": "3 automatic die-cutting lines for precise cutting of custom shapes, creasing, and perforation." },
+        { "name": "Folder-Gluer Lines", "desc": "2 high-speed folder-gluer machines with automatic quality inspection. Handles complex box structures." },
+        { "name": "Hot Foil Stamping", "desc": "Cylinder and platen foil stamping machines for gold, silver, and holographic foil application." },
+        { "name": "UV & Lamination", "desc": "Full sheet UV coating, spot UV, matte and gloss lamination — all in-house." }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & Qualifications",
+      "items": [
+        { "name": "ISO 9001:2015", "desc": "Quality management system certified. Consistent processes from inquiry to delivery." },
+        { "name": "FDA Food Contact", "desc": "Materials and inks comply with FDA 21 CFR for direct and indirect food contact." },
+        { "name": "EU Food Contact (EC 1935/2004)", "desc": "European regulation compliance for food contact materials and articles." },
+        { "name": "FSC Certified", "desc": "Forest Stewardship Council certified — sustainable paper sourcing available on request." }
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "items": [
+        { "number": "50+", "label": "Skilled Craftsmen" },
+        { "number": "8", "label": "Quality Inspectors" },
+        { "number": "5", "label": "Design Engineers" },
+        { "number": "24/7", "label": "Customer Support" }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Request a Quotation",
+    "description": "Tell us about your packaging needs — we'll reply within 24 hours with pricing and samples.",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "Full name",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "country": "Country",
+      "countryPlaceholder": "Where to ship",
+      "product": "Product Type",
+      "productOptions": ["Food Packaging Box", "Gift Box / Rigid Box", "Shipping / Mailer Box", "Color Card / Hang Tag", "Other"],
+      "details": "Details (size, quantity, material, finish)",
+      "detailsPlaceholder": "e.g. 87×87×83mm, 500 pcs, grey board with foil stamping, matte lamination...",
+      "submit": "Submit — Get Free Quote in 24 Hours",
+      "netlifyFormName": "contact-en"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "josh@ymys0769.com",
+      "whatsapp": "+86 13532861588",
+      "address": "Dongguan, Guangdong, China",
+      "hours": "Mon–Sat, 8:00–18:00 (GMT+8)"
+    }
+  },
+  "footer": {
+    "company": "YUANMEI PRINTING",
+    "desc": "Custom packaging manufacturer — Dongguan, Guangdong, China",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "© 2008–2026 Guangdong Dongguan Yuanmei Printing Factory. All rights reserved."
+  }
+}

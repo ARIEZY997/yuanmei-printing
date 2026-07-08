@@ -1,0 +1,147 @@
+---
+interface Props {
+  lang: "en" | "zh";
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const t = lang === "zh"
+  ? { home: "首页", products: "产品", about: "关于我们", contact: "联系我们", language: "English" }
+  : { home: "Home", products: "Products · Cases", about: "About", contact: "Contact", language: "中文" };
+
+const otherLang = lang === "en" ? "zh" : "en";
+const otherPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+---
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href={`/${lang}/`} class="logo">
+      <img src="/images/公司LOGO.png" alt="Yuanmei Printing" class="logo-img" />
+      <span class="logo-text">YUANMEI <span class="logo-accent">PRINTING</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href={`/${lang}/`} class={`nav-underline ${currentPath === `/${lang}/` ? "active" : ""}`}>{t.home}</a></li>
+      <li><a href={`/${lang}/products/`} class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>{t.products}</a></li>
+      <li><a href={`/${lang}/about/`} class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>{t.about}</a></li>
+      <li><a href={`/${lang}/contact/`} class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>{t.contact}</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href={otherPath} class="lang-switch">{t.language}</a>
+      <a href={`/${lang}/contact/`} class="btn btn-primary nav-cta btn-ripple">
+        {lang === "zh" ? "获取报价" : "Get Quote"}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 12px 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-icon svg {
+    display: block;
+  }
+
+  .logo-img { height:36px; width:auto; display:block; }
+
+  .logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+  }
+
+  .logo-accent {
+    color: var(--purple);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .lang-switch {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .lang-switch:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+  }
+
+  .nav-cta {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .logo-text {
+      font-size: 14px;
+    }
+
+    .nav-actions {
+      gap: 8px;
+    }
+  }
+</style>

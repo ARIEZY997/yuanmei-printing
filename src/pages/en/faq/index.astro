@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Nav from "../../../components/Nav.astro";
+import Footer from "../../../components/Footer.astro";
+import en from "../../../i18n/en.json";
+const t = en;
+const currentPath = "/en/faq/";
+---
+
+<BaseLayout title="FAQ — Yuanmei Printing" description="Frequently asked questions about custom packaging. MOQ, materials, production time, shipping, samples, certifications." lang="en" currentPath={currentPath}>
+<Nav lang="en" currentPath={currentPath} />
+
+<main class="page">
+<section class="page-hero"><div class="container"><h1>Frequently Asked Questions</h1><p>Everything you need to know about working with us</p></div></section>
+<section class="section section-alt">
+<div class="container">
+<div class="faq-list">
+{t.home.faq.items.map((item:any) => (
+<details class="faq-item"><summary class="faq-q">{item.question}</summary><div class="faq-a"><p>{item.answer}</p></div></details>
+))}
+</div>
+<div class="faq-cta"><p>Still have questions?</p><a href="/en/contact/" class="btn btn-primary btn-ripple">Contact Us</a></div>
+</div>
+</section>
+</main>
+<Footer lang="en"/>
+</BaseLayout>
+
+<style>
+.page{background:#0a0a0f;color:#e0dce8}
+.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}
+.page-hero p{font-size:17px;color:#94a3b8}
+.section{padding:80px 0}
+.section-alt{background:#110d1a}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
+.faq-item[open]{border-color:var(--purple-light)}
+.faq-q{padding:20px 24px;font-size:16px;font-weight:600;color:#e0dce8;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:"+";font-size:20px;color:var(--purple-light);transition:transform .3s}
+.faq-item[open] .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 24px 20px}
+.faq-a p{font-size:15px;color:#9ca3af;line-height:1.8}
+.faq-cta{text-align:center;margin-top:48px}
+.faq-cta p{font-size:16px;color:#6b7280;margin-bottom:16px}
+</style>

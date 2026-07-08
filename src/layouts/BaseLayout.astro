@@ -1,0 +1,141 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  lang: "en" | "zh";
+  currentPath: string;
+  structuredData?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = "/images/og-image.jpg",
+  lang,
+  currentPath,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = Astro.site?.origin ?? "https://yuanmeiprinting.com";
+const ogImageUrl = new URL(ogImage, siteUrl).href;
+const locale = lang === "zh" ? "zh-CN" : "en-US";
+const companyName = lang === "zh" ? "源美包装印刷" : "Yuanmei Printing";
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={locale} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={new URL(currentPath, siteUrl).href} />
+
+    <!-- Alternate hreflang -->
+    {
+      lang === "en" ? (
+        <link rel="alternate" hreflang="zh" href={new URL(currentPath.replace("/en/", "/zh/"), siteUrl).href} />
+      ) : (
+        <link rel="alternate" hreflang="en" href={new URL(currentPath.replace("/zh/", "/en/"), siteUrl).href} />
+      )
+    }
+    <link rel="alternate" hreflang={lang} href={new URL(currentPath, siteUrl).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(en|zh)\//, "/en/"), siteUrl).href} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json" is:inline set:html={`{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "${companyName}",
+      "url": "${siteUrl}",
+      "inLanguage": "${locale}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "${siteUrl}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }`} />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json" is:inline set:html={`{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "${companyName}",
+      "alternateName": "Yuanmei Printing Factory",
+      "url": "${siteUrl}",
+      "logo": "${siteUrl}/favicon.svg",
+      "description": "${description}",
+      "foundingDate": "2008",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "josh@ymys0769.com",
+        "contactType": "sales",
+        "availableLanguage": ["English", "Chinese"]
+      },
+      "sameAs": []
+    }`} />
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json" is:inline set:html={`{
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "${companyName}",
+      "image": "${ogImageUrl}",
+      "url": "${siteUrl}",
+      "telephone": "+86",
+      "email": "josh@ymys0769.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }`} />
+
+    <!-- Custom structured data from page -->
+    {structuredData && (
+      <script type="application/ld+json" is:inline set:html={structuredData} />
+    )}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+    <script src="/scripts/animations.js" defer is:inline></script>
+  </body>
+</html>

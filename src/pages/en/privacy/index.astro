@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Nav from "../../../components/Nav.astro";
+import Footer from "../../../components/Footer.astro";
+const currentPath = "/en/privacy/";
+---
+
+<BaseLayout title="Privacy Policy — Yuanmei Printing" description="Privacy policy for Yuanmei Printing. How we handle your data when you submit an inquiry or request a quotation." lang="en" currentPath={currentPath}>
+<Nav lang="en" currentPath={currentPath} />
+
+<main class="page">
+<section class="page-hero"><div class="container"><h1>Privacy Policy</h1><p>Last updated: July 2026</p></div></section>
+<section class="section">
+<div class="container policy-content">
+
+<h2>1. Information We Collect</h2>
+<p>When you submit a quotation request or contact form on our website, we collect: your name, company name, email address, country, product type selection, and project details you provide.</p>
+
+<h2>2. How We Use Your Information</h2>
+<p>We use the information you provide solely to respond to your inquiry, prepare quotations, and communicate with you about your packaging project. We do not use your data for marketing purposes without your explicit consent.</p>
+
+<h2>3. Data Storage & Security</h2>
+<p>Form submissions are processed through Netlify Forms and stored securely. We retain inquiry data for up to 24 months for business record purposes. You may request deletion of your data at any time by emailing josh@ymys0769.com.</p>
+
+<h2>4. Cookies</h2>
+<p>This website does not use tracking cookies. We do not run analytics, advertising pixels, or any third-party tracking scripts. The only data collected is what you voluntarily submit through our contact forms.</p>
+
+<h2>5. Third-Party Services</h2>
+<p>Our website is hosted on Netlify and uses Netlify Forms for contact form processing. Netlify's privacy policy applies to the hosting and form processing infrastructure. We do not share your data with any other third parties.</p>
+
+<h2>6. Your Rights</h2>
+<p>You have the right to: access the personal data we hold about you; request correction of inaccurate data; request deletion of your data; withdraw consent at any time. To exercise these rights, contact us at josh@ymys0769.com.</p>
+
+<h2>7. Contact</h2>
+<p>For privacy-related inquiries:<br>Yuanmei Printing<br>Email: josh@ymys0769.com<br>WhatsApp: +86 13532861588<br>Dongguan, Guangdong, China</p>
+
+</div>
+</section>
+</main>
+<Footer lang="en"/>
+</BaseLayout>
+
+<style>
+.page{background:#0a0a0f;color:#e0dce8}
+.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}
+.page-hero p{font-size:17px;color:#94a3b8}
+.section{padding:80px 0}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.policy-content h2{font-size:22px;font-weight:700;color:#e0dce8;margin:36px 0 12px}
+.policy-content p{font-size:15px;color:#9ca3af;line-height:1.8;margin-bottom:16px}
+</style>

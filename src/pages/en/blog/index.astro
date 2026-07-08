@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Nav from "../../../components/Nav.astro";
+import Footer from "../../../components/Footer.astro";
+const currentPath = "/en/blog/";
+---
+
+<BaseLayout title="Blog — Packaging Insights | Yuanmei Printing" description="Expert insights on custom packaging, box manufacturing, material selection, and design trends for global brands." lang="en" currentPath={currentPath}>
+<Nav lang="en" currentPath={currentPath} />
+
+<main class="page">
+<section class="page-hero"><div class="container"><h1>Packaging Insights</h1><p>Expert guides, tips, and trends in custom packaging</p></div></section>
+<section class="section section-alt">
+<div class="container">
+<div class="blog-grid">
+{[{title:"How to Choose the Right Paper Stock for Your Packaging",date:"June 2026",desc:"From grey board to kraft — a practical guide to selecting the right material for your custom boxes. Includes GSM comparisons, finish compatibility, and food-grade requirements."},{title:"5 Box Finishes That Elevate Your Brand (And When to Use Them)",date:"May 2026",desc:"Hot foil, spot UV, embossing, soft touch, and matte lamination — what each finish communicates about your brand, and which products they work best for."},{title:"The Complete Guide to Packaging MOQ: What Startups Need to Know",date:"April 2026",desc:"Minimum order quantities can make or break a packaging project. We break down what MOQ means for custom boxes, why it exists, and how to negotiate the best terms for your business."},{title:"DDP Shipping Explained: Getting Your Boxes from China to Your Door",date:"March 2026",desc:"Delivered Duty Paid shipping takes the complexity out of international logistics. Learn how DDP works, what it covers, and why it's the preferred choice for packaging imports."},{title:"Sustainable Packaging Materials: Options for Eco-Conscious Brands",date:"February 2026",desc:"FSC-certified paper, soy-based inks, biodegradable laminates — practical sustainable packaging choices that don't compromise on quality or aesthetics."},{title:"Die-Cut vs. Standard Boxes: Which Is Right for Your Product?",date:"January 2026",desc:"Custom die-cut boxes offer unique shapes and unboxing experiences, but they come with different costs and lead times. Compare the trade-offs for your packaging project."}].map((post) => (
+<article class="blog-card"><h3>{post.title}</h3><span class="blog-date">{post.date}</span><p>{post.desc}</p></article>
+))}
+</div>
+</div>
+</section>
+</main>
+<Footer lang="en"/>
+</BaseLayout>
+
+<style>
+.page{background:#0a0a0f;color:#e0dce8}
+.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}
+.page-hero p{font-size:17px;color:#94a3b8}
+.section{padding:80px 0}
+.section-alt{background:#110d1a}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.blog-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px;transition:border-color .2s}
+.blog-card:hover{border-color:var(--purple-light)}
+.blog-card h3{font-size:18px;font-weight:700;color:#e0dce8;margin-bottom:8px;line-height:1.4}
+.blog-date{font-size:12px;color:var(--purple-light);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:12px}
+.blog-card p{font-size:14px;color:#9ca3af;line-height:1.7}
+</style>

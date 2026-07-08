@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import ProductGrid from "../../components/ProductGrid.astro";
+import CTASection from "../../components/CTASection.astro";
+import zh from "../../i18n/zh.json";
+
+const t = zh;
+const currentPath = "/zh/products/";
+
+const productStructuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": t.products.categories.map((cat: { title: string; description: string }, i: number) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Product",
+      "name": cat.title,
+      "description": cat.description,
+      "category": "定制包装",
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "源美包装印刷",
+      },
+    },
+  })),
+});
+---
+
+<BaseLayout
+  title={`产品中心 — ${t.site.title}`}
+  description="浏览定制包装解决方案：食品包装盒、礼品盒、瓦楞箱、色卡。专业定制制造，ISO认证，全球发货。"
+  lang="zh"
+  currentPath={currentPath}
+  structuredData={productStructuredData}
+>
+  <Nav lang="zh" currentPath={currentPath} />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-reveal="fade">{t.products.title}</h1>
+        <p data-reveal="fade">{t.products.description}</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <ProductGrid categories={t.products.categories} />
+      </div>
+    </section>
+
+    <CTASection
+      lang="zh"
+      title="需要定制包装方案？"
+      description="每个项目都是独一无二的。告诉我们您的需求，我们会在24小时内提供专属报价。"
+      buttonText="索取报价"
+    />
+  </main>
+
+  <Footer lang="zh" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 140px 0 64px;
+    background: linear-gradient(135deg, var(--purple-bg), #2D1250);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .page-hero p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .page-hero h1 {
+      font-size: 28px;
+    }
+  }
+</style>

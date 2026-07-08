@@ -1,0 +1,123 @@
+---
+interface Props {
+  form: {
+    name: string;
+    namePlaceholder: string;
+    company: string;
+    companyPlaceholder: string;
+    email: string;
+    emailPlaceholder: string;
+    country: string;
+    countryPlaceholder: string;
+    product: string;
+    productOptions: string[];
+    details: string;
+    detailsPlaceholder: string;
+    submit: string;
+    netlifyFormName: string;
+  };
+}
+
+const { form } = Astro.props;
+---
+
+<form name={form.netlifyFormName} method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+  <input type="hidden" name="form-name" value={form.netlifyFormName} />
+  <p class="hidden" style="display:none;">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </p>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">{form.name} *</label>
+      <input type="text" id="name" name="name" required placeholder={form.namePlaceholder} />
+    </div>
+    <div class="form-group">
+      <label for="company">{form.company}</label>
+      <input type="text" id="company" name="company" placeholder={form.companyPlaceholder} />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email">{form.email} *</label>
+      <input type="email" id="email" name="email" required placeholder={form.emailPlaceholder} />
+    </div>
+    <div class="form-group">
+      <label for="country">{form.country}</label>
+      <input type="text" id="country" name="country" placeholder={form.countryPlaceholder} />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="product">{form.product}</label>
+    <select id="product" name="product">
+      {form.productOptions.map((opt) => <option value={opt}>{opt}</option>)}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="details">{form.details}</label>
+    <textarea id="details" name="details" rows="4" placeholder={form.detailsPlaceholder}></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-full">{form.submit}</button>
+</form>
+
+<style>
+  .contact-form {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
