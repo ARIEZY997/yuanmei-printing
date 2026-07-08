@@ -1,37 +1,28 @@
 ---
 interface Props {
-  lang: "en" | "zh";
+  lang: string;
   currentPath: string;
 }
 
-const { lang, currentPath } = Astro.props;
-const t = lang === "zh"
-  ? { home: "首页", products: "产品", about: "关于我们", contact: "联系我们", language: "English" }
-  : { home: "Home", products: "Products · Cases", about: "About", contact: "Contact", language: "中文" };
-
-const otherLang = lang === "en" ? "zh" : "en";
-const otherPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+const { currentPath } = Astro.props;
 ---
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href={`/${lang}/`} class="logo">
+    <a href="/en/" class="logo">
       <img src="/images/公司LOGO.png" alt="Yuanmei Printing" class="logo-img" />
       <span class="logo-text">YUANMEI <span class="logo-accent">PRINTING</span></span>
     </a>
 
     <ul class="nav-links">
-      <li><a href={`/${lang}/`} class={`nav-underline ${currentPath === `/${lang}/` ? "active" : ""}`}>{t.home}</a></li>
-      <li><a href={`/${lang}/products/`} class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>{t.products}</a></li>
-      <li><a href={`/${lang}/about/`} class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>{t.about}</a></li>
-      <li><a href={`/${lang}/contact/`} class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>{t.contact}</a></li>
+      <li><a href="/en/" class={`nav-underline ${currentPath === "/en/" ? "active" : ""}`}>Home</a></li>
+      <li><a href="/en/products/" class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>Products · Cases</a></li>
+      <li><a href="/en/about/" class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>About</a></li>
+      <li><a href="/en/contact/" class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>Contact</a></li>
     </ul>
 
     <div class="nav-actions">
-      <a href={otherPath} class="lang-switch">{t.language}</a>
-      <a href={`/${lang}/contact/`} class="btn btn-primary nav-cta btn-ripple">
-        {lang === "zh" ? "获取报价" : "Get Quote"}
-      </a>
+      <a href="/en/contact/" class="btn btn-primary nav-cta btn-ripple">Get Quote</a>
     </div>
   </div>
 </nav>

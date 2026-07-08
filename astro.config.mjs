@@ -7,19 +7,12 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     sitemap({
-      i18n: {
-        defaultLocale: "en",
-        locales: {
-          en: "en-US",
-          zh: "zh-CN",
-        },
-      },
       filter: (page) => !page.includes("/404"),
     }),
   ],
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "zh"],
+    locales: ["en"],
     routing: {
       prefixDefaultLocale: true,
     },

@@ -50,15 +50,8 @@ const companyName = lang === "zh" ? "源美包装印刷" : "Yuanmei Printing";
     <link rel="canonical" href={new URL(currentPath, siteUrl).href} />
 
     <!-- Alternate hreflang -->
-    {
-      lang === "en" ? (
-        <link rel="alternate" hreflang="zh" href={new URL(currentPath.replace("/en/", "/zh/"), siteUrl).href} />
-      ) : (
-        <link rel="alternate" hreflang="en" href={new URL(currentPath.replace("/zh/", "/en/"), siteUrl).href} />
-      )
-    }
-    <link rel="alternate" hreflang={lang} href={new URL(currentPath, siteUrl).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(en|zh)\//, "/en/"), siteUrl).href} />
+    <link rel="alternate" hreflang="en" href={new URL(currentPath, siteUrl).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(currentPath, siteUrl).href} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
