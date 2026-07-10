@@ -126,6 +126,14 @@ const companyName = lang === "zh" ? "源美包装印刷" : "Yuanmei Printing";
     )}
 
     <link rel="icon" type="image/png" href="/images/公司LOGO.png" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
   <body>
     <slot />

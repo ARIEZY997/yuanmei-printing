@@ -81,6 +81,22 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
   </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="n-section testimonials-section">
+  <div class="section-sticky-header"><span class="n-label">Client Voices</span><h2>Trusted by <span class="accent">brands worldwide</span></h2></div>
+  <div class="testimonial-grid">
+    {[{quote:"Yuanmei delivered our strawberry punnets ahead of schedule. The foil stamping was flawless — our customers noticed the difference immediately.",name:"Five Seasons Farm",country:"Canada"},
+      {quote:"We've tried 4 packaging suppliers in China. Yuanmei is the only one that consistently meets our Japanese quality standards.",name:"RISOK Design",country:"Japan"},
+      {quote:"The Christmas candle boxes arrived perfectly. PVC window, embossed logo — exactly as promised. Will reorder for next season.",name:"QRA Foods",country:"India"},
+      {quote:"From first sketch to final delivery, the team was responsive and professional. Our luxury chocolate boxes exceeded expectations.",name:"ATELIERS OJA",country:"France"},
+    ].map((t) => (
+    <div class="testimonial-card">
+      <p class="testimonial-quote">"{t.quote}"</p>
+      <div class="testimonial-author"><strong>{t.name}</strong><span>{t.country}</span></div>
+    </div>))}
+  </div>
+</section>
+
 <!-- ═══ SECTION 5: GLOBAL ═══ -->
 <section id="global-section" class="n-section global-section">
   <div class="section-sticky-header"><span class="n-label">Global Reach</span><h2>From <span class="accent">Dongguan</span> to your doorstep</h2></div>
@@ -184,6 +200,15 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 .np-body ul{list-style:none;padding:0}
 .np-body li{font-size:13px;color:#6b7280;padding:3px 0}
 .np-body li::before{content:"→ ";color:var(--purple-light)}
+
+/* ── Testimonials ── */
+.testimonials-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;width:100%}
+.testimonial-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px}
+.testimonial-quote{font-size:15px;color:#9ca3af;line-height:1.8;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:8px}
+.testimonial-author strong{font-size:14px;color:#e0dce8}
+.testimonial-author span{font-size:12px;color:var(--purple-light)}
 
 /* ── Global ── */
 .global-section{background:linear-gradient(180deg,#110d1a,#0a0a0f);display:flex;align-items:center}

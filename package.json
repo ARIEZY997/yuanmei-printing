@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/partytown": "^2.1.7",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^5.7.0",
     "gsap": "^3.15.0",
