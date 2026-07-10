@@ -2,7 +2,15 @@
   command = "npm run build"
   publish = "dist"
 
+# Form success redirect
 [[redirects]]
   from = "/api/contact"
-  to = "/contact-success"
+  to = "/success/"
   status = 200
+
+# www redirect
+[[redirects]]
+  from = "https://www.ymboxs.com/*"
+  to = "https://ymboxs.com/:splat"
+  status = 301
+  force = true

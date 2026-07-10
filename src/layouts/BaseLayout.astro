@@ -137,6 +137,14 @@ const companyName = lang === "zh" ? "源美包装印刷" : "Yuanmei Printing";
   </head>
   <body>
     <slot />
+    <!-- Cookie Consent -->
+    <div class="cookie-banner" id="cookie-banner" style="display:none">
+      <p>We use cookies to analyze traffic. <a href="/privacy/">Privacy Policy</a></p>
+      <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookies-accepted','1');gtag('consent','update',{analytics_storage:'granted'})">Got it</button>
+    </div>
+    <script is:inline>
+      if(!localStorage.getItem('cookies-accepted')){document.getElementById('cookie-banner').style.display='flex'}
+    </script>
     <script src="/scripts/animations.js" defer is:inline></script>
     <!-- WhatsApp Float -->
     <a href="https://wa.me/8613532861588" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">

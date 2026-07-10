@@ -21,7 +21,7 @@ interface Props {
 const { form } = Astro.props;
 ---
 
-<form name={form.netlifyFormName} method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+<form name={form.netlifyFormName} method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success/" class="contact-form">
   <input type="hidden" name="form-name" value={form.netlifyFormName} />
   <p class="hidden" style="display:none;">
     <label>Don't fill this out if you're human: <input name="bot-field" /></label>

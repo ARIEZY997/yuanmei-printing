@@ -466,7 +466,34 @@ main {
   }
 }
 
-/* WhatsApp Float */
+/* Cookie Consent */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1028;
+  border-top: 1px solid rgba(124,58,237,0.2);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+.cookie-banner p { font-size: 13px; color: #94a3b8; margin: 0; }
+.cookie-banner a { color: var(--purple-light); }
+.cookie-banner button {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
 .wa-float {
   position: fixed;
   bottom: 24px;
