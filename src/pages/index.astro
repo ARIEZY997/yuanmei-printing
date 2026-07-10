@@ -39,6 +39,16 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
       <div class="hb-scroll">↓</div>
     </section>
 
+<!-- ═══ FACTORY VIDEO ═══ -->
+<section class="n-section video-section">
+  <div class="section-sticky-header"><span class="n-label">See Our Factory</span><h2>Where <span class="accent">your boxes</span> are made</h2></div>
+  <div class="video-wrap">
+    <div class="video-ratio">
+      <iframe src="https://www.youtube.com/embed/6kh5NEkQ4Aw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Yuanmei Printing factory tour"></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ SECTION 2: MATERIALS ═══ -->
 <section id="materials-section" class="n-section materials-section">
   <div class="section-sticky-header"><span class="n-label">Materials Speak</span><h2>The right surface <span class="accent">changes everything</span></h2></div>
@@ -158,6 +168,12 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 .hb-scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:14px;color:#6b7280;animation:hb-bounce 2s ease-in-out infinite}
 @keyframes hb-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 @media(max-width:640px){.hb-content h1{font-size:56px;letter-spacing:-2px}}
+
+/* ── Video Section ── */
+.video-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
+.video-wrap{max-width:900px;width:100%}
+.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.08)}
+.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 
 /* ── Materials ── */
 .materials-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
