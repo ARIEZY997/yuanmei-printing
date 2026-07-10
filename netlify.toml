@@ -4,9 +4,10 @@
 
 # Form success redirect
 [[redirects]]
-  from = "/api/contact"
+  from = "/contact/"
   to = "/success/"
   status = 200
+  query = {nf = ":nf"}  # Only redirect after form submission
 
 # www redirect
 [[redirects]]
