@@ -6,7 +6,7 @@ import ProductGrid from "../components/ProductGrid.astro";
 import en from "../i18n/en.json";
 
 const t = en;
-const currentPath = "/en/products/";
+const currentPath = "/products/";
 ---
 
 <BaseLayout title="Products & Cases — Yuanmei Printing" description="Custom packaging solutions and client case studies. Food packaging, gift boxes, corrugated boxes, color cards. Real projects from 30+ countries." lang="en" currentPath={currentPath}>
@@ -21,6 +21,26 @@ const currentPath = "/en/products/";
 <span class="section-label">Our Products</span>
 <h2 class="section-title">Custom Packaging Solutions</h2>
 <ProductGrid categories={t.products.categories} />
+</div>
+</section>
+
+<!-- Product Specs -->
+<section class="section section-dark">
+<div class="container">
+<span class="section-label">Specifications</span>
+<h2 class="section-title">What You Need to Know</h2>
+<div class="spec-grid">
+{[{title:"Materials",items:["Grey Board 1200gsm — rigid luxury boxes","Coated Art Paper — glossy, high-end retail","Kraft Paper — natural, eco-friendly","Duplex Board — economical, lightweight","Corrugated E-Flute — protective shipping","Food-grade FDA / EU compliant stock"]},
+{title:"Finishing Options",items:["Hot Foil Stamping — gold, silver, holographic","Spot UV — precise glossy highlights","Matte / Gloss Lamination — smooth or shiny","Embossing & Debossing — tactile 3D effects","Soft Touch Coating — velvety feel","Die Cutting — any custom shape"]},
+{title:"Box Structures",items:["Straight Tuck End — classic retail box","Reverse Tuck End — secure closure","Magnetic Rigid Box — premium luxury","Drawer Box — sliding elegance","Mailer Box — e-commerce ready","Custom Die-Cut — your design, our precision"]},
+{title:"Ordering Info",items:["MOQ: 50 pieces per design","Sample: Free pre-production sample","Production: 7-15 days standard","Shipping: Sea / Air / DDP to door","Payment: T/T, LC, PayPal","File Format: AI, PDF, CDR accepted"]},
+].map((s) => (
+<div class="spec-card">
+<h3>{s.title}</h3>
+<ul>{s.items.map((i) => <li>{i}</li>)}</ul>
+</div>
+))}
+</div>
 </div>
 </section>
 
@@ -48,7 +68,7 @@ const currentPath = "/en/products/";
 
 <div class="case-cta">
 <p>Your project could be next.</p>
-<a href="/en/contact/" class="btn btn-primary btn-ripple">Start Your Project</a>
+<a href="/contact/" class="btn btn-primary btn-ripple">Start Your Project</a>
 </div>
 </div>
 </section>
@@ -78,6 +98,14 @@ const currentPath = "/en/products/";
 .case-note{font-size:13px;color:#6b7280}
 .case-cta{text-align:center;margin-top:48px}
 .case-cta p{font-size:16px;color:#6b7280;margin-bottom:16px}
+
+/* Spec grid */
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.spec-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px}
+.spec-card h3{font-size:17px;font-weight:700;color:var(--purple-light);margin-bottom:16px}
+.spec-card ul{list-style:none;padding:0}
+.spec-card li{font-size:14px;color:#9ca3af;padding:6px 0;line-height:1.5}
+.spec-card li::before{content:"→ ";color:var(--purple-light)}
 
 @media(max-width:640px){.page-hero h1{font-size:28px}}
 </style>
