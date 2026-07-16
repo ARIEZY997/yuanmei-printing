@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+const currentPath = "/certificates/";
+---
+
+<BaseLayout title="Certificates — YMBOX" description="YMBOX certifications: ISO 9001, FDA, EU Food Contact, FSC. Quality and compliance for custom packaging manufacturing." lang="en" currentPath={currentPath}>
+<Nav lang="en" currentPath={currentPath} />
+<main class="page">
+<section class="page-hero"><div class="container"><h1>Certificates</h1><p>Quality standards you can trust</p></div></section>
+<section class="section section-alt">
+<div class="container">
+<div class="cert-grid">
+{[{name:"ISO 9001:2015",desc:"Quality management system",img:"/images/验证资质1.png"},
+  {name:"FDA Food Contact",desc:"FDA 21 CFR compliant materials",img:"/images/验证资质2.png"},
+  {name:"EU Food Contact",desc:"EC 1935/2004 regulation",img:"/images/验证资质3.png"},
+  {name:"FSC Certified",desc:"Forest Stewardship Council",img:"/images/验证资质4.png"},
+  {name:"Quality Assurance",desc:"Additional compliance",img:"/images/验证资质5.png"},
+].map((c) => (
+<div class="cert-card">
+  <div class="cert-img-wrap"><img src={c.img} alt={c.name} class="cert-img"/></div>
+  <h3>{c.name}</h3>
+  <p>{c.desc}</p>
+</div>
+))}
+</div>
+</div>
+</section>
+</main>
+<Footer/>
+</BaseLayout>
+<style>
+.page{background:#0a0a0f;color:#e0dce8}
+.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}
+.page-hero p{font-size:17px;color:#94a3b8}
+.section{padding:80px 0}
+.section-alt{background:#110d1a}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.cert-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.cert-card:hover{border-color:var(--purple-light)}
+.cert-img-wrap{height:320px;overflow:hidden;background:#f8f7ff;display:flex;align-items:center;justify-content:center;padding:24px}
+.cert-img{max-width:100%;max-height:100%;object-fit:contain}
+.cert-card h3{font-size:18px;font-weight:700;color:#e0dce8;padding:0 24px;margin-top:20px}
+.cert-card p{font-size:14px;color:#9ca3af;padding:0 24px 24px}
+@media(max-width:640px){.cert-img-wrap{height:240px}.page-hero h1{font-size:28px}}
+</style>
