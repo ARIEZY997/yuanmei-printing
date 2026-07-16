@@ -10,14 +10,14 @@ const { currentPath } = Astro.props;
 <nav class="nav">
   <div class="container nav-inner">
     <a href="/" class="logo">
-      <img src="/images/公司LOGO.png" alt="Yuanmei Printing" class="logo-img" />
+      <img src="/images/公司LOGO.webp" alt="Yuanmei Printing" class="logo-img" />
       <span class="logo-text">YUANMEI <span class="logo-accent">PRINTING</span></span>
     </a>
 
     <ul class="nav-links">
       <li><a href="/" class={`nav-underline ${currentPath === "/" ? "active" : ""}`}>Home</a></li>
-      <li><a href="/products/" class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>Products · Cases</a></li>
-      <li><a href="/about/" class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>About</a></li>
+      <li><a href="/products/" class={`nav-underline ${currentPath.includes("/products") ? "active" : ""}`}>Products</a></li>
+      <li><a href="/about/" class={`nav-underline ${currentPath.includes("/about") ? "active" : ""}`}>About · Capabilities</a></li>
       <li><a href="/contact/" class={`nav-underline ${currentPath.includes("/contact") ? "active" : ""}`}>Contact</a></li>
     </ul>
 

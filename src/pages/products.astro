@@ -2,112 +2,20 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import ProductGrid from "../components/ProductGrid.astro";
-import en from "../i18n/en.json";
-
-const t = en;
 const currentPath = "/products/";
+const cats = [
+  {id:"food",name:"Food Packaging",desc:"FDA-compliant boxes for produce, confectionery, and food service",items:["Strawberry punnets","Chocolate boxes","Pastry packaging","Bakery boxes","Takeaway containers"],grid:["Fruit Punnet Box","Chocolate Gift Box","Pastry Window Box","Bakery Tray Box","Food Container"]},
+  {id:"gift",name:"Gift Boxes",desc:"Premium rigid, magnetic, and collapsible presentation boxes",items:["Magnetic closure","Collapsible gift boxes","Drawer boxes","Jewelry boxes","Candle boxes"],grid:["Magnetic Flip Box","Drawer Gift Box","Collapsible Box","Rigid Jewelry Box","Candle Gift Set"]},
+  {id:"corrugated",name:"Corrugated & Shipping",desc:"Mailer boxes and e-commerce packaging with branded interior",items:["Mailer boxes","Shipping cartons","Subscription boxes","Die-cut shapes","Branded interior"],grid:["Custom Mailer Box","Shipping Carton","Subscription Box","Die-Cut Mailer","E-Commerce Box"]},
+  {id:"cosmetic",name:"Cosmetic Packaging",desc:"Luxury boxes for beauty, skincare, and fragrance brands",items:["Skincare boxes","Makeup palettes","Perfume boxes","Gift sets","Rigid cases"],grid:["Serum Box","Palette Box","Perfume Gift Box","Skincare Set Box","Rigid Cosmetic Case"]},
+];
 ---
-
-<BaseLayout title="Products & Cases — Yuanmei Printing" description="Custom packaging solutions and client case studies. Food packaging, gift boxes, corrugated boxes, color cards. Real projects from 30+ countries." lang="en" currentPath={currentPath}>
+<BaseLayout title="Product Directory — YMBOX Packaging" description="Browse YMBOX packaging by category: food, gift, corrugated, cosmetic. Custom boxes for global brands." lang="en" currentPath={currentPath}>
 <Nav lang="en" currentPath={currentPath} />
-
-<main>
-<section class="page-hero"><div class="container"><h1>Products &amp; Cases</h1><p>What we make. Who we've made it for.</p></div></section>
-
-<!-- Products -->
-<section class="section section-alt">
-<div class="container">
-<span class="section-label">Our Products</span>
-<h2 class="section-title">Custom Packaging Solutions</h2>
-<ProductGrid categories={t.products.categories} />
-</div>
-</section>
-
-<!-- Product Specs -->
-<section class="section section-dark">
-<div class="container">
-<span class="section-label">Specifications</span>
-<h2 class="section-title">What You Need to Know</h2>
-<div class="spec-grid">
-{[{title:"Materials",items:["Grey Board 1200gsm — rigid luxury boxes","Coated Art Paper — glossy, high-end retail","Kraft Paper — natural, eco-friendly","Duplex Board — economical, lightweight","Corrugated E-Flute — protective shipping","Food-grade FDA / EU compliant stock"]},
-{title:"Finishing Options",items:["Hot Foil Stamping — gold, silver, holographic","Spot UV — precise glossy highlights","Matte / Gloss Lamination — smooth or shiny","Embossing & Debossing — tactile 3D effects","Soft Touch Coating — velvety feel","Die Cutting — any custom shape"]},
-{title:"Box Structures",items:["Straight Tuck End — classic retail box","Reverse Tuck End — secure closure","Magnetic Rigid Box — premium luxury","Drawer Box — sliding elegance","Mailer Box — e-commerce ready","Custom Die-Cut — your design, our precision"]},
-{title:"Ordering Info",items:["MOQ: 50 pieces per design","Sample: Free pre-production sample","Production: 7-15 days standard","Shipping: Sea / Air / DDP to door","Payment: T/T, LC, PayPal","File Format: AI, PDF, CDR accepted"]},
-].map((s) => (
-<div class="spec-card">
-<h3>{s.title}</h3>
-<ul>{s.items.map((i) => <li>{i}</li>)}</ul>
-</div>
-))}
-</div>
-</div>
-</section>
-
-<!-- Case Studies -->
-<section class="section section-dark">
-<div class="container">
-<span class="section-label">Client Cases</span>
-<h2 class="section-title">Trusted by Brands Worldwide</h2>
-<div class="case-grid">
-{[{industry:"Agriculture",client:"Five Seasons Farm",country:"Canada",need:"Needed FDA-compliant strawberry punnets with premium branding for retail shelves",solution:"Custom-printed punnets with gold foil stamping, matte coating, and tear-resistant structure. Delivered 5,000 units in 12 days."},
-{industry:"Luxury Retail",client:"Premium Candle Brand",country:"UK",need:"Magnetic closure gift boxes with custom-fit dividers for 3-candle sets",solution:"Collapsible rigid boxes with magnetic closure, velvet-lined interior fitments, and soft-touch matte finish. Produced 500 units in 10 days."},
-{industry:"Food & Beverage",client:"QRA Foods",country:"India",need:"Christmas-themed candle set boxes with product window and festive branding",solution:"PVC window boxes with embossed logo, burgundy color scheme, and gold foil accents. Delivered 3,000 units ahead of holiday deadline."},
-{industry:"Design & Retail",client:"RISOK",country:"Japan",need:"Minimalist packaging meeting strict Japanese quality standards — flush corners, precise color",solution:"270gsm Greige paper boxes with spot UV on brand mark only. Flush corners to 0.1mm tolerance. Every unit individually inspected."},
-{industry:"Confectionery",client:"ATELIERS OJA",country:"France",need:"Luxury chocolate packaging with premium tactile feel and gold interior",solution:"Solid core board rigid boxes with full matte lamination, gold foil interior lining, and magnetic closure. 2,000 units in 7 days."},
-{industry:"E-commerce",client:"DTC Skincare Brand",country:"USA",need:"Branded mailer boxes with tear strip and interior print for unboxing experience",solution:"Full-color exterior print with branded interior pattern. Tear strip for easy opening. 10,000 units via DDP sea freight to Los Angeles."},
-].map((c) => (
-<article class="case-card">
-<div class="case-flag">{c.industry} · {c.country}</div>
-<h3>{c.client}</h3>
-<p class="case-need"><strong>Need:</strong> {c.need}</p>
-<p class="case-solution"><strong>Solution:</strong> {c.solution}</p>
-</article>
-))}
-</div>
-
-<div class="case-cta">
-<p>Your project could be next.</p>
-<a href="/contact/" class="btn btn-primary btn-ripple">Start Your Project</a>
-</div>
-</div>
-</section>
-</main>
-
-<Footer/>
+<main class="page"><section class="page-hero"><div class="container"><h1>Product Directory</h1><p>Browse by category. Every box custom made.</p></div></section>
+<section class="section section-alt"><div class="dir-layout">
+<nav class="dir-sidebar"><h3>Categories</h3>{cats.map((c)=>(<a href={`#${c.id}`} class="dir-link">{c.name}</a>))}<a href="/contact/" class="dir-link dir-cta">Get a Quote →</a></nav>
+<div class="dir-content">{cats.map((c)=>(<section id={c.id} class="dir-section"><h2>{c.name}</h2><p class="dir-desc">{c.desc}</p><div class="dir-grid">{c.grid.map((item)=>(<div class="dir-card"><div class="dir-img"><div class="dir-ph">{item}</div></div><span>{item}</span></div>))}</div><div class="dir-features">{c.items.map((i)=>(<span class="dir-tag">{i}</span>))}</div></section>))}</div>
+</div></section></main><Footer/>
 </BaseLayout>
-
-<style>
-.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}
-.page-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);font-weight:800;margin-bottom:12px}
-.page-hero p{font-size:17px;color:#94a3b8}
-.section{padding:80px 0}
-.section-alt{background:#110d1a}
-.section-dark{background:#0a0a0f}
-.section-label{font-size:13px;text-transform:uppercase;letter-spacing:4px;color:var(--purple-light);margin-bottom:12px;display:block}
-.section-title{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:800;color:#e0dce8;margin-bottom:48px}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-
-/* Case grid */
-.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.case-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;transition:border-color .2s}
-.case-card:hover{border-color:var(--purple-light)}
-.case-flag{display:inline-block;font-size:11px;letter-spacing:2px;color:var(--purple-light);text-transform:uppercase;margin-bottom:10px}
-.case-card h3{font-size:18px;font-weight:700;color:#e0dce8;margin-bottom:8px}
-.case-need{font-size:13px;color:#9ca3af;margin-bottom:6px;line-height:1.5}
-.case-need strong{color:#6b7280;font-weight:600}
-.case-solution{font-size:13px;color:var(--purple-light);line-height:1.5}
-.case-solution strong{color:#9ca3af;font-weight:600}
-.case-cta{text-align:center;margin-top:48px}
-.case-cta p{font-size:16px;color:#6b7280;margin-bottom:16px}
-
-/* Spec grid */
-.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.spec-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px}
-.spec-card h3{font-size:17px;font-weight:700;color:var(--purple-light);margin-bottom:16px}
-.spec-card ul{list-style:none;padding:0}
-.spec-card li{font-size:14px;color:#9ca3af;padding:6px 0;line-height:1.5}
-.spec-card li::before{content:"→ ";color:var(--purple-light)}
-
-@media(max-width:640px){.page-hero h1{font-size:28px}}
-</style>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,48px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.dir-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:40px;padding:0 24px}.dir-sidebar{position:sticky;top:100px;align-self:start}.dir-sidebar h3{font-size:14px;font-weight:700;color:#e0dce8;margin-bottom:16px;text-transform:uppercase;letter-spacing:2px}.dir-link{display:block;padding:8px 0;font-size:14px;color:#6b7280;text-decoration:none;transition:color .2s;border-bottom:1px solid rgba(255,255,255,0.04)}.dir-link:hover{color:var(--purple-light)}.dir-cta{margin-top:12px;color:var(--purple-light)!important;font-weight:600}.dir-section{margin-bottom:64px}.dir-section h2{font-family:var(--font-display);font-size:24px;font-weight:800;color:#e0dce8;margin-bottom:8px}.dir-desc{font-size:14px;color:#9ca3af;margin-bottom:20px}.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:16px}.dir-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;overflow:hidden;transition:border-color .2s}.dir-card:hover{border-color:var(--purple-light)}.dir-img{height:160px;overflow:hidden}.dir-ph{height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(74,29,139,0.04));font-size:12px;color:rgba(124,58,237,0.3);font-weight:600;text-align:center;padding:4px}.dir-card span{display:block;padding:10px 12px;font-size:12px;color:#9ca3af}.dir-features{display:flex;flex-wrap:wrap;gap:8px}.dir-tag{padding:6px 14px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.15);border-radius:20px;font-size:12px;color:var(--purple-light)}@media(max-width:768px){.dir-layout{grid-template-columns:1fr}.dir-sidebar{position:static;display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}.dir-sidebar h3{display:none}.dir-link{border-bottom:none;padding:6px 12px;background:rgba(255,255,255,0.02);border-radius:6px}}@media(max-width:640px){.page-hero h1{font-size:28px}.dir-grid{grid-template-columns:repeat(2,1fr)}.dir-img{height:130px}}</style>

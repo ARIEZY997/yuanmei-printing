@@ -2,299 +2,63 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import CTASection from "../components/CTASection.astro";
-import en from "../i18n/en.json";
-
-const t = en;
-const currentPath = "/about/";
+import en from "../i18n/en.json"; const t = en; const p = "/about/";
 ---
+<BaseLayout title="About & Capabilities — YMBOX" description="YMBOX: custom packaging manufacturer since 2008. 5 presses, 80+ craftsmen, 40+ countries. ISO 9001, FDA, FSC certified. Full in-house production." lang="en" currentPath={p}>
+<Nav lang="en" currentPath={p} />
+<main class="page"><section class="page-hero"><div class="container"><h1>About YMBOX</h1><p>18 years. One factory. Full control from dieline to delivery.</p></div></section>
 
-<BaseLayout
-  title={`About — ${t.site.title}`}
-  description="18 years of packaging manufacturing. ISO-certified factory with 5 large presses, Komori & Roland equipment, FDA & EU food contact compliant. Dongguan, China."
-  lang="en"
-  currentPath={currentPath}
->
-  <Nav lang="en" currentPath={currentPath} />
+<!-- Story -->
+<section class="section section-alt"><div class="container"><div class="story-layout">
+<div class="story-content"><span class="s-label">Our Story</span><h2>From Dongguan to the world</h2><p>Founded in 2008 in China's manufacturing heartland, YMBOX has grown from a small workshop into a trusted packaging partner for brands across 40+ countries. We combine traditional craftsmanship with modern printing technology — Komori, Roland, and KBA presses running daily for consistent output.</p></div>
+<div class="story-img"><div class="img-ph">Factory Photo</div></div>
+</div></div></section>
 
-  <main>
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 data-reveal="fade">{t.about.title}</h1>
-        <p data-reveal="fade">{t.about.description}</p>
-      </div>
-    </section>
+<!-- Stats -->
+<!-- Printing -->
+<section class="section"><div class="container"><span class="s-label">Printing</span><h2>Equipment & Capabilities</h2>
+<div class="cap-grid">{[{t:"Komori Lithrone G40",d:"5-color offset press with coater. Sheet size up to 720×1,030mm. High-speed precision for medium to large production runs."},{t:"Roland 700 Series",d:"4-color offset press. Quick job changeover for short to medium runs. Trusted globally for print quality."},{t:"KBA Press",d:"German-engineered for premium quality. Ideal for high-end packaging that demands flawless color reproduction."}].map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}
+</div></div></section>
 
-    <!-- Story -->
-    <section class="section">
-      <div class="container">
-        <div class="story-layout">
-            <div class="story-content" data-reveal="left">
-            <span class="section-label">Who We Are</span>
-            <h2 class="section-title">{t.about.story.title}</h2>
-            <p>{t.about.story.content}</p>
-          </div>
-          <div class="story-img" data-reveal="right">
-            <img src="/images/工厂内图.png" alt="Yuanmei Printing factory interior" class="story-real-img" />
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Finishing -->
+<section class="section section-alt"><div class="container"><span class="s-label">Finishing & Post-Press</span><h2>Under one roof</h2>
+<div class="cap-grid">{["Hot Foil Stamping — Gold, silver, rose gold, holographic","Spot UV — Selective high-gloss highlights","Embossing & Debossing — Raised or recessed 3D effects","Matte / Gloss Lamination — Full-sheet coating","Soft Touch — Velvety matte finish","Die Cutting — 3 automatic lines, custom shapes","Gluing — 2 high-speed folder-gluer lines","Hand Assembly — For complex luxury structures"].map((d)=>(<div class="cap-card"><p>{d}</p></div>))}
+</div></div></section>
 
-    <!-- Team Stats -->
-    <section class="stats-bar">
-      <div class="container">
-        {t.about.team.items.map((item) => (
-          <div class="stat-item">
-            <div class="stat-num">{item.number}</div>
-            <div class="stat-lbl">{item.label}</div>
-          </div>
-        ))}
-      </div>
-    </section>
+<!-- Prepress -->
+<section class="section"><div class="container"><span class="s-label">Prepress & QC</span><h2>Precision from start to finish</h2>
+<div class="cap-grid">{[{t:"Structural Design",d:"Engineers create production-ready dielines from your concept — precise to 0.1mm."},{t:"CTP Plate Making",d:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction."},{t:"Color Management",d:"Pantone matching on all presses. Digital proofs before production."},{t:"Quality Control",d:"Incoming material checks, in-process QC, and final hand-inspection. Every box checked."}].map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}
+</div></div></section>
 
-    <!-- Machinery -->
-    <section class="section section-alt">
-      <div class="container">
-        <span class="section-label">Equipment</span>
-        <h2 class="section-title">{t.about.machinery.title}</h2>
-        <p class="section-desc">All production processes — from prepress to finishing — completed in-house</p>
-        <div class="machinery-grid" data-reveal-stagger="120">
-          {t.about.machinery.items.map((item, i: number) => {
-            const mImgs = ["/images/小森.jpg","/images/多兰机全景.jpg","/images/高爆.jpg","/images/640.jpg",null,null];
-            return (
-            <div class="machinery-card hover-lift glow-hover" data-reveal>
-              {mImgs[i] && <div class="machinery-thumb"><img src={mImgs[i]} alt={item.name} /></div>}
-              <h3>{item.name}</h3>
-              <p>{item.desc}</p>
-            </div>
-          )})}
-        </div>
-      </div>
-    </section>
+<!-- Certifications -->
+<section class="section section-alt"><div class="container"><span class="s-label">Certifications</span><h2>Quality you can trust</h2>
+<div class="cert-row">{["ISO 9001:2015 — Quality management system","FDA Food Contact — FDA 21 CFR compliant","EU Food Contact — EC 1935/2004 regulation","FSC Certified — Forest Stewardship Council"].map((c)=>(<div class="cert-badge">{c}</div>))}
+</div><div style="text-align:center;margin-top:32px"><a href="/certificates/" class="btn btn-outline-white">View Certificates →</a></div></div></section>
 
-    <!-- Certifications -->
-    <section class="section section-alt">
-      <div class="container">
-        <span class="section-label">Trust & Quality</span>
-        <h2 class="section-title">{t.about.certifications.title}</h2>
-        <div class="cert-grid-large" data-reveal-stagger="150">
-          {t.about.certifications.items.map((item, i: number) => {
-            const certImgs = ["/images/验证资质1.png","/images/验证资质2.png","/images/验证资质3.png","/images/验证资质4.png"];
-            return (
-            <div class="cert-card-large hover-lift" data-reveal>
-              {certImgs[i] && <div class="cert-img-wrap"><img src={certImgs[i]} alt={item.name} class="cert-img-large" /></div>}
-              <div class="cert-info-large">
-                <h3>{item.name}</h3>
-                <p>{item.desc}</p>
-              </div>
-            </div>
-          )})}
-        </div>
-      </div>
-    </section>
-
-    <CTASection
-      lang="en"
-      title="See Our Factory in Action?"
-      description="We welcome factory visits. Contact us to schedule a tour or request detailed equipment specifications."
-      buttonText="Schedule a Visit"
-    />
-  </main>
-
-  <Footer lang="en" />
+<!-- CTA -->
+<section class="section cta-end"><div class="container" style="text-align:center"><h2>Ready to start your project?</h2><p style="color:#9ca3af;margin-bottom:24px">Free sample · 24h reply · 50 pcs MOQ</p><a href="/contact/" class="btn btn-primary btn-ripple">Get Free Quote</a></div></section>
+</main><Footer/>
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding: 140px 0 64px;
-    background: linear-gradient(135deg, var(--purple-bg), #2D1250);
-    color: var(--white);
-    text-align: center;
-  }
+.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}
+.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.s-label{font-size:13px;text-transform:uppercase;letter-spacing:4px;color:var(--purple-light);margin-bottom:12px;display:block;font-weight:600}
+.section h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);font-weight:800;color:#e0dce8;margin-bottom:32px}
 
-  .page-hero h1 {
-    font-family: var(--font-display);
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
+.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story-content p{font-size:16px;color:#9ca3af;line-height:1.8;margin-top:12px}
+.img-ph{height:300px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(74,29,139,0.04));border-radius:16px;color:rgba(124,58,237,0.25);font-weight:700;font-size:16px}
 
-  .page-hero p {
-    font-size: 17px;
-    color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.wu-bar{background:var(--purple);padding:36px 0}.wu-inner{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}.wu-s{text-align:center}.wu-s em{display:block;font-family:var(--font-display);font-style:normal;font-weight:800;font-size:32px;color:var(--white)}.wu-s span{font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:1px}
 
-  /* Story */
-  .story-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cap-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px}.cap-card h3{font-size:15px;font-weight:700;color:var(--purple-light);margin-bottom:6px}.cap-card p{font-size:14px;color:#9ca3af;line-height:1.6}
 
-  .story-content p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-top: 16px;
-  }
+.cert-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.cert-badge{padding:14px 24px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.15);border-radius:8px;font-size:14px;color:var(--purple-light)}
 
-  .story-real-img { width:100%; height:100%; object-fit:cover; border-radius:var(--radius-lg); }
-.machinery-thumb { height:180px; border-radius:8px; overflow:hidden; margin-bottom:14px; }
-.machinery-thumb img { width:100%; height:100%; object-fit:cover; }
-.img-placeholder {
-    background: linear-gradient(135deg, #f0edf7, #e8e0f5);
-    border-radius: var(--radius-lg);
-    height: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--purple);
-    font-weight: 600;
-    font-size: 15px;
-  }
+.cta-end h2{font-family:var(--font-display);font-size:32px;font-weight:800;color:#e0dce8;margin-bottom:8px}
 
-  /* Stats Bar */
-  .stats-bar {
-    background: var(--purple);
-    padding: 48px 0;
-  }
-
-  .stats-bar .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-  }
-
-  .stat-item {
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--white);
-    margin-bottom: 6px;
-  }
-
-  .stat-lbl {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
-  }
-
-  /* Machinery */
-  .machinery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .machinery-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 28px;
-    transition: box-shadow 0.2s;
-  }
-
-  .machinery-card:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--purple-light);
-  }
-
-  .machinery-card h3 {
-    font-family: var(--font-display);
-    font-size: 17px;
-    color: var(--purple-deep);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .machinery-card h3::before {
-    content: "⚙";
-    font-size: 18px;
-  }
-
-  .machinery-card p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  /* Certifications Large */
-  .cert-grid-large {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 40px;
-  }
-
-  .cert-card-large {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-  }
-
-  .cert-img-wrap {
-    height: 260px;
-    overflow: hidden;
-    background: #f8f7ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .cert-img-large {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .cert-info-large {
-    padding: 24px;
-  }
-
-  .cert-info-large h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-  }
-
-  .cert-info-large p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-  }
-
-  @media (max-width: 768px) {
-    .story-layout {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .page-hero h1 {
-      font-size: 28px;
-    }
-
-    .stats-bar .container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .stat-num {
-      font-size: 32px;
-    }
-  }
+@media(max-width:768px){.story-layout{grid-template-columns:1fr}.page-hero h1{font-size:28px}}
+@media(max-width:640px){.wu-inner{gap:20px}.wu-s em{font-size:24px}}
 </style>

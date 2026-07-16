@@ -29,12 +29,19 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
       </div>
       <div class="hb-content">
         <div class="hb-logo-ring">
-          <img src="/images/公司LOGO.png" alt="Yuanmei Printing" class="hb-logo" />
+          <img src="/images/公司LOGO.webp" alt="Yuanmei Printing" class="hb-logo" />
         </div>
         <h1>We<br>Make<br>Boxes<span class="hb-dot">.</span></h1>
         <div class="hb-line"></div>
         <p class="hb-sub">Dongguan, China · Custom packaging since 2008</p>
+        <div class="hb-action">
         <a href="/contact/" class="hb-cta">Start Your Project</a>
+        <div class="hb-stats-art">
+          <div class="hbs-item"><em>18+</em><span>Years</span></div>
+          <div class="hbs-item"><em>5</em><span>Presses</span></div>
+          <div class="hbs-item"><em>80+</em><span>Craftsmen</span></div>
+          <div class="hbs-item"><em>40+</em><span>Countries</span></div>
+        </div>
       </div>
       <div class="hb-scroll">↓</div>
     </section>
@@ -49,14 +56,20 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
   </div>
 </section>
 
+<!-- ═══ SAMPLE STRIP ═══ -->
+<div class="sample-strip">
+  <span>Need to see it first? <strong>Request a free sample</strong> — we'll ship it to your door.</span>
+  <a href="/contact/" class="hb-cta">Request Sample</a>
+</div>
+
 <!-- ═══ SECTION 2: MATERIALS ═══ -->
 <section id="materials-section" class="n-section materials-section">
   <div class="section-sticky-header"><span class="n-label">Materials Speak</span><h2>The right surface <span class="accent">changes everything</span></h2></div>
   <div class="cmyk-grid">
-    <div class="cmyk-block cmyk-cyan"><div class="cmyk-visual"><img src="/images/纸张纹理1.jpg" alt="Coated art paper" class="cmyk-img"/></div><span class="cmyk-tag">C</span><p>Coated Art Paper</p><small>Glossy. Precise. Vibrant.</small></div>
-    <div class="cmyk-block cmyk-magenta"><div class="cmyk-visual"><img src="/images/烫金.jpg" alt="Gold foil" class="cmyk-img"/></div><span class="cmyk-tag">M</span><p>Hot Foil Stamping</p><small>Gold. Silver. Holographic.</small></div>
-    <div class="cmyk-block cmyk-yellow"><div class="cmyk-visual"><img src="/images/牛皮纸纹理.jpg" alt="Kraft paper" class="cmyk-img"/></div><span class="cmyk-tag">Y</span><p>Kraft & Texture</p><small>Natural. Earthy. Honest.</small></div>
-    <div class="cmyk-block cmyk-black"><div class="cmyk-visual"><img src="/images/击凸工艺.jpg" alt="Embossed paper" class="cmyk-img"/></div><span class="cmyk-tag">K</span><p>Emboss & Deboss</p><small>Depth. Touch. Luxury.</small></div>
+    <div class="cmyk-block cmyk-cyan"><div class="cmyk-visual"><img src="/images/纸张纹理1.webp" alt="Coated art paper" class="cmyk-img"/></div><span class="cmyk-tag">C</span><p>Coated Art Paper</p><small>Glossy. Precise. Vibrant.</small></div>
+    <div class="cmyk-block cmyk-magenta"><div class="cmyk-visual"><img src="/images/烫金.webp" alt="Gold foil" class="cmyk-img"/></div><span class="cmyk-tag">M</span><p>Hot Foil Stamping</p><small>Gold. Silver. Holographic.</small></div>
+    <div class="cmyk-block cmyk-yellow"><div class="cmyk-visual"><img src="/images/牛皮纸纹理.webp" alt="Kraft paper" class="cmyk-img"/></div><span class="cmyk-tag">Y</span><p>Kraft & Texture</p><small>Natural. Earthy. Honest.</small></div>
+    <div class="cmyk-block cmyk-black"><div class="cmyk-visual"><img src="/images/击凸工艺.webp" alt="Embossed paper" class="cmyk-img"/></div><span class="cmyk-tag">K</span><p>Emboss & Deboss</p><small>Depth. Touch. Luxury.</small></div>
   </div>
 </section>
 
@@ -66,10 +79,10 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
   <div class="craft-hscroll" id="craft-wrap">
     {[
 {step:"01",title:"Design & Structure",desc:"Engineers turn your concept into a production-ready dieline — precise to 0.1mm.",img:null},
-          {step:"02",title:"CTP Plate Making",desc:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction.",img:null},
-          {step:"03",title:"Offset Printing",desc:"Komori G40 + Roland 700 + KBA. 5 presses running daily for consistent color.",img:"/images/小森机广角图.jpg",alt:"Komori Lithrone G40"},
-          {step:"04",title:"Die-Cutting & Creasing",desc:"3 automatic lines. Every cut, every crease — precise and repeatable.",img:null},
-          {step:"05",title:"Gluing & Quality Control",desc:"Hand-inspected. 80+ craftsmen. Every box checked before it ships.",img:"/images/广角工人工作图.jpg",alt:"Workers at gluing station"},
+          {step:"02",title:"CTP Plate Making",desc:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction.",img:"/images/ctp.webp"},
+          {step:"03",title:"Offset Printing",desc:"Komori G40 + Roland 700 + KBA. 5 presses running daily for consistent color.",img:"/images/小森机广角图.webp",alt:"Komori Lithrone G40"},
+          {step:"04",title:"Die-Cutting & Creasing",desc:"3 automatic lines. Every cut, every crease — precise and repeatable.",img:"/images/diecut.webp",alt:"Die cutting machine"},
+          {step:"05",title:"Gluing & Quality Control",desc:"Hand-inspected. 80+ craftsmen. Every box checked before it ships.",img:"/images/广角工人工作图.webp",alt:"Workers at gluing station"},
     ].map((s)=>(
     <div class="craft-panel">
       <div class="craft-img">{s.img?<img src={s.img} alt={s.alt||s.title} class="craft-real-img"/>:<div class="craft-placeholder">{s.title}</div>}</div>
@@ -83,7 +96,7 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 <section id="products-section" class="n-section products-narrative">
   <div class="section-sticky-header"><span class="n-label">What We Make</span><h2>Packaging that <span class="accent">sells before it's opened</span></h2></div>
   <div class="product-narrative-grid">
-    {t.products.categories.map((cat:any,i:number)=>{const pi=["/images/部分产品图.png","/images/部分产品图2.png",null,null];return(
+    {t.products.categories.map((cat:any,i:number)=>{const pi=["/images/部分产品图.webp","/images/部分产品图2.webp",null,null];return(
     <div class="narrative-product-card">
       <div class="np-img">{pi[i]?<img src={pi[i]} alt={cat.title} class="np-real-img"/>:<div class="np-placeholder">{cat.title}</div>}</div>
       <div class="np-body"><h3>{cat.title}</h3><p>{cat.description}</p><ul>{cat.items.map((item:string)=><li>{item}</li>)}</ul></div>
@@ -91,18 +104,25 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
+<!-- ═══ CASE STUDIES ═══ -->
 <section class="n-section testimonials-section">
-  <div class="section-sticky-header"><span class="n-label">Client Voices</span><h2>Trusted by <span class="accent">brands worldwide</span></h2></div>
+  <div class="section-sticky-header"><span class="n-label">Industry Cases</span><h2><span class="accent">40+ Countries.</span> One Standard.</h2></div>
   <div class="testimonial-grid">
-    {[{quote:"Yuanmei delivered our strawberry punnets ahead of schedule. The foil stamping was flawless — our customers noticed the difference immediately.",name:"Five Seasons Farm",country:"Canada"},
-      {quote:"We've tried 4 packaging suppliers in China. Yuanmei is the only one that consistently meets our Japanese quality standards.",name:"RISOK Design",country:"Japan"},
-      {quote:"The Christmas candle boxes arrived perfectly. PVC window, embossed logo — exactly as promised. Will reorder for next season.",name:"QRA Foods",country:"India"},
-      {quote:"From first sketch to final delivery, the team was responsive and professional. Our luxury chocolate boxes exceeded expectations.",name:"ATELIERS OJA",country:"France"},
-    ].map((t) => (
+    {[{industry:"Agriculture",client:"Five Seasons Farm",country:"Canada",need:"Needed FDA-compliant strawberry punnets with premium branding for retail shelves",solution:"Custom-printed punnets with gold foil stamping, matte coating, and tear-resistant structure. Delivered 5,000 units in 12 days."},
+      {industry:"Luxury Retail",client:"Premium Candle Brand",country:"UK",need:"Magnetic closure gift boxes with custom-fit dividers for 3-candle sets",solution:"Collapsible rigid boxes with magnetic closure, velvet-lined interior fitments, and soft-touch matte finish. Produced 500 units in 10 days."},
+      {industry:"Food & Beverage",client:"QRA Foods",country:"India",need:"Christmas-themed candle set boxes with product window and festive branding",solution:"PVC window boxes with embossed logo, burgundy color scheme, and gold foil accents. Delivered 3,000 units ahead of holiday deadline."},
+      {industry:"Design & Retail",client:"RISOK",country:"Japan",need:"Minimalist packaging meeting strict Japanese quality standards",solution:"270gsm Greige paper boxes with spot UV on brand mark only. Flush corners to 0.1mm tolerance. Every unit individually inspected."},
+      {industry:"Confectionery",client:"ATELIERS OJA",country:"France",need:"Luxury chocolate packaging with premium tactile feel and gold interior",solution:"Solid core board rigid boxes with full matte lamination, gold foil interior lining, and magnetic closure. 2,000 units in 7 days."},
+      {industry:"E-commerce",client:"DTC Skincare Brand",country:"USA",need:"Branded mailer boxes with tear strip and interior print for unboxing experience",solution:"Full-color exterior print with branded interior pattern. Tear strip for easy opening. 10,000 units via DDP sea freight to Los Angeles."},
+      {industry:"Electronics Export",client:"Shenzhen Tech Trading",country:"China",need:"Custom packaging for wireless earbuds exported to European distributors — compact, premium feel",solution:"Rigid magnetic closure boxes with custom foam inserts. Spot UV logo on matte black surface. 80,000 units per batch, monthly recurring export to Europe."},
+      {industry:"Toy Export",client:"Guangzhou Toy Trading",country:"China",need:"Colorful window boxes for educational toys shipped to US retailers — child-safe, attractive retail display",solution:"Die-cut window boxes with 4-color printing and glossy lamination. Rounded corners for safety. 120,000 units per shipment, sea freight to Long Beach."},
+      {industry:"General Merchandise",client:"Yiwu Export Trading",country:"China",need:"Economical kraft boxes for assorted home goods exported to Middle East — durable, branded, cost-effective",solution:"Kraft paper boxes with single-color logo print. Reinforced bottom for heavy items. 200,000+ units monthly. Consistent production year-round."},
+    ].map((c) => (
     <div class="testimonial-card">
-      <p class="testimonial-quote">"{t.quote}"</p>
-      <div class="testimonial-author"><strong>{t.name}</strong><span>{t.country}</span></div>
+      <div class="testimonial-flag">{c.industry} · {c.country}</div>
+      <h3 class="testimonial-client">{c.client}</h3>
+      <p class="testimonial-need"><strong>Need:</strong> {c.need}</p>
+      <p class="testimonial-sol"><strong>Solution:</strong> {c.solution}</p>
     </div>))}
   </div>
 </section>
@@ -115,9 +135,9 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
       <img src="/images/world-map.svg" alt="World map" class="world-map-img"/>
       <div class="map-marker map-origin-marker" style="left:80%;top:40%;"><div class="map-pin"></div><div class="map-pin-ring"></div><span class="map-label map-label-origin">Dongguan</span></div>
       <svg class="shipping-routes" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {[{x:15,y:35},{x:22,y:28},{x:47,y:30},{x:49,y:32},{x:84,y:34},{x:82,y:64},{x:68,y:44},{x:62,y:38},{x:30,y:48},{x:53,y:55},{x:81,y:32},{x:20,y:40}].map((d,i)=>(<path class="ship-route" d={`M80,40 Q${(80+d.x)/2},${(40+d.y)/2-i*2} ${d.x},${d.y}`} fill="none" stroke="var(--purple-light)" stroke-width="0.3" stroke-dasharray="2 3" opacity="0.5"/>))}
+        {[{x:17,y:33},{x:23,y:27},{x:50,y:30},{x:51,y:33},{x:85,y:33},{x:83,y:62},{x:69,y:42},{x:63,y:37},{x:32,y:50},{x:54,y:57},{x:82,y:31},{x:20,y:42}].map((d,i)=>(<path class="ship-route" d={`M80,40 Q${(80+d.x)/2},${(40+d.y)/2-i*2} ${d.x},${d.y}`} fill="none" stroke="var(--purple-light)" stroke-width="0.3" stroke-dasharray="2 3" opacity="0.5"/>))}
       </svg>
-      {[{l:"15%",t:"35%",n:"USA"},{l:"22%",t:"28%",n:"Canada"},{l:"47%",t:"30%",n:"UK"},{l:"49%",t:"32%",n:"France"},{l:"84%",t:"34%",n:"Japan"},{l:"82%",t:"64%",n:"Australia"},{l:"68%",t:"44%",n:"India"},{l:"62%",t:"38%",n:"UAE"},{l:"30%",t:"48%",n:"Brazil"},{l:"53%",t:"55%",n:"S.Africa"},{l:"81%",t:"32%",n:"Korea"},{l:"20%",t:"40%",n:"Mexico"}].map((d)=>(<div class="map-marker map-dest" style={`left:${d.l};top:${d.t};`}><div class="map-dot-small"></div><span class="map-dest-label">{d.n}</span></div>))}
+      {[{l:"17%",t:"33%",n:"USA"},{l:"23%",t:"27%",n:"Canada"},{l:"50%",t:"30%",n:"UK"},{l:"51%",t:"33%",n:"France"},{l:"85%",t:"33%",n:"Japan"},{l:"83%",t:"62%",n:"Australia"},{l:"69%",t:"42%",n:"India"},{l:"63%",t:"37%",n:"UAE"},{l:"32%",t:"50%",n:"Brazil"},{l:"54%",t:"57%",n:"S.Africa"},{l:"82%",t:"31%",n:"Korea"},{l:"20%",t:"42%",n:"Mexico"}].map((d)=>(<div class="map-marker map-dest" style={`left:${d.l};top:${d.t};`}><div class="map-dot-small"></div><span class="map-dest-label">{d.n}</span></div>))}
     </div>
     <div class="global-stats"><div class="g-stat"><strong>40+</strong><span>Countries</span></div><div class="g-stat"><strong>18</strong><span>Years</span></div><div class="g-stat"><strong>2M+</strong><span>Boxes/Year</span></div><div class="g-stat"><strong>DDP</strong><span>Shipping</span></div></div>
   </div>
@@ -154,6 +174,15 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 .hb-sub{font-size:17px;color:#6b7280;margin-bottom:40px;max-width:400px}
 .hb-cta{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--white);background:var(--purple);padding:16px 36px;border-radius:6px;text-decoration:none;letter-spacing:1px;transition:all .2s}
 .hb-cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+/* Hero action row */
+.hb-action{display:flex;align-items:center;justify-content:flex-start;gap:24px;flex-wrap:wrap}
+/* Hero stats art */
+.hb-stats-art{display:flex;gap:12px;align-items:center}
+.hbs-item{text-align:center;padding:0 14px;border-right:1px solid rgba(255,255,255,0.06)}
+.hbs-item:last-child{border-right:none}
+.hbs-item em{display:block;font-family:var(--font-display);font-style:normal;font-weight:700;font-size:20px;color:var(--purple-light)}
+.hbs-item span{font-size:10px;color:#6b7280;letter-spacing:1px}
+@media(max-width:640px){.hbs-item em{font-size:16px}.hbs-item{padding:0 8px}.hb-stats-art{gap:6px}}
 /* Geo lines */
 .hb-geo{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hb-geo-line{position:absolute;background:rgba(124,58,237,0.08)}
@@ -169,11 +198,18 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 @keyframes hb-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 @media(max-width:640px){.hb-content h1{font-size:56px;letter-spacing:-2px}}
 
+/* ── Sample Strip ── */
+.sample-strip{background:#110d25;border-top:1px solid rgba(124,58,237,0.15);border-bottom:1px solid rgba(124,58,237,0.15);padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;text-align:center}
+.sample-strip span{font-size:14px;color:#9ca3af}
+.sample-strip strong{color:var(--purple-light)}
+@media(max-width:640px){.sample-strip{flex-direction:column;gap:12px}}
+
 /* ── Video Section ── */
 .video-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
 .video-wrap{max-width:900px;width:100%}
 .video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.08)}
 .video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+@media(max-width:768px){.video-ratio{border-radius:8px}}
 
 /* ── Materials ── */
 .materials-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
@@ -217,14 +253,21 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 .np-body li{font-size:13px;color:#6b7280;padding:3px 0}
 .np-body li::before{content:"→ ";color:var(--purple-light)}
 
-/* ── Testimonials ── */
+/* ── Products Gateway ── */
+.products-gateway{min-height:50vh;justify-content:center;text-align:center}
+.gateway-sub{font-size:17px;color:#6b7280;margin-bottom:32px;max-width:500px}
+.gateway-btn{font-size:16px;padding:16px 32px;border-color:var(--purple-light)}
+
+/* ── Case Studies ── */
 .testimonials-section{background:linear-gradient(180deg,#0a0a0f,#110d1a)}
-.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;width:100%}
-.testimonial-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px}
-.testimonial-quote{font-size:15px;color:#9ca3af;line-height:1.8;margin-bottom:20px;font-style:italic}
-.testimonial-author{display:flex;align-items:center;gap:8px}
-.testimonial-author strong{font-size:14px;color:#e0dce8}
-.testimonial-author span{font-size:12px;color:var(--purple-light)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;width:100%}
+.testimonial-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px}
+.testimonial-flag{font-size:11px;letter-spacing:2px;color:var(--purple-light);text-transform:uppercase;margin-bottom:10px}
+.testimonial-client{font-size:18px;font-weight:700;color:#e0dce8;margin-bottom:10px}
+.testimonial-need{font-size:13px;color:#9ca3af;margin-bottom:6px;line-height:1.5}
+.testimonial-need strong{color:#6b7280;font-weight:600}
+.testimonial-sol{font-size:13px;color:var(--purple-light);line-height:1.5}
+.testimonial-sol strong{color:#9ca3af;font-weight:600}
 
 /* ── Global ── */
 .global-section{background:linear-gradient(180deg,#110d1a,#0a0a0f);display:flex;align-items:center}
@@ -289,8 +332,6 @@ const panels=document.querySelectorAll("#craft-section .craft-panel") as NodeLis
 if(panels.length>1){const pw=panels[0].offsetWidth+40;gsap.to(panels,{x:(i:number)=>-i*pw,ease:"none",scrollTrigger:{trigger:"#craft-section",pin:true,start:"top top",end:()=>`+=${(panels.length-1)*pw}`,scrub:1.2}})}
 
 // ── Products ──
-document.querySelectorAll("#products-section .narrative-product-card").forEach((c:any,i:number)=>{gsap.from(c,{scrollTrigger:{trigger:"#products-section",start:"top 55%",toggleActions:"play none none reverse"},y:60,opacity:0,duration:.6,delay:i*.15,ease:"power3.out"})});
-
 // ── Global routes + dots ──
 const routes=document.querySelectorAll("#global-section .ship-route");
 const dests=document.querySelectorAll("#global-section .map-dest");
