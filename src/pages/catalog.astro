@@ -1,0 +1,197 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const currentPath = "/catalog/";
+---
+
+<BaseLayout title="Company Catalog — YMBOX Packaging Solutions" description="YMBOX custom packaging manufacturer. Food packaging, gift boxes, corrugated boxes. ISO 9001, FDA, FSC certified. Since 2008, Dongguan China." lang="en" currentPath={currentPath}>
+
+<main class="catalog-page">
+  <div class="catalog-print-btn"><button onclick="window.print()" class="btn btn-primary">🖨 Print / Save PDF</button></div>
+
+  <!-- Cover -->
+  <section class="cat-cover">
+    <img src="/images/公司LOGO.png" alt="YMBOX" class="cat-logo" />
+    <h1>Premium Packaging Solutions</h1>
+    <p class="cat-sub">Custom Box Manufacturing · Dongguan, China · Since 2008</p>
+    <div class="cat-divider"></div>
+  </section>
+
+  <!-- About -->
+  <section class="cat-section">
+    <h2>About YMBOX</h2>
+    <p>YMBOX (Yuanmei Printing) is a custom packaging manufacturer based in Dongguan, Guangdong — China's manufacturing heartland. Founded in 2008, we've grown from a small workshop into a trusted partner for brands across 40+ countries.</p>
+    <div class="cat-stats">
+      <div><strong>18+</strong><span>Years</span></div>
+      <div><strong>5</strong><span>Presses</span></div>
+      <div><strong>80+</strong><span>Craftsmen</span></div>
+      <div><strong>40+</strong><span>Countries</span></div>
+      <div><strong>2M+</strong><span>Boxes/Year</span></div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="cat-section">
+    <h2>Product Categories</h2>
+    <div class="cat-grid">
+      {[{title:"Food Packaging Boxes",img:"/images/部分产品图.png",items:["Strawberry / fruit punnets","Chocolate & confectionery boxes","Bakery & pastry packaging","Takeaway food containers","FDA & EU food contact compliant"]},
+        {title:"Custom Gift Boxes",img:"/images/部分产品图2.png",items:["Rigid magnetic closure boxes","Collapsible gift boxes","Candle & fragrance boxes","Jewelry presentation boxes","Luxury finishes available"]},
+        {title:"Corrugated & Shipping Boxes",img:null,items:["Mailer boxes (e-commerce)","Custom shipping cartons","Subscription box packaging","Die-cut custom shapes","Branded interior print"]},
+        {title:"Color Cards & Inserts",img:null,items:["Product color swatch cards","Hang tags & swing tags","Instruction inserts","Promotional postcards","Custom finishes & coatings"]},
+      ].map((p) => (
+      <div class="cat-card">
+        <div class="cat-card-img">{p.img ? <img src={p.img} alt={p.title} /> : <div class="cat-ph">{p.title}</div>}</div>
+        <h3>{p.title}</h3>
+        <ul>{p.items.map((i) => <li>{i}</li>)}</ul>
+      </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Materials & Finishes -->
+  <section class="cat-section">
+    <h2>Materials & Finishes</h2>
+    <div class="cat-2col">
+      <div>
+        <h3>Paper & Board</h3>
+        <ul>
+          <li>Grey Board 1200gsm</li>
+          <li>Coated Art Paper</li>
+          <li>Kraft Paper</li>
+          <li>Duplex Board</li>
+          <li>Corrugated / E-Flute</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Finishing Options</h3>
+        <ul>
+          <li>Hot Foil Stamping</li>
+          <li>Spot UV</li>
+          <li>Matte / Gloss Lamination</li>
+          <li>Embossing / Debossing</li>
+          <li>Soft Touch Coating</li>
+          <li>Die Cutting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section class="cat-section">
+    <h2>Production Equipment</h2>
+    <div class="cat-equip">
+      <div class="cat-equip-img"><img src="/images/小森机广角图.jpg" alt="Komori Lithrone G40"/></div>
+      <div class="cat-equip-info">
+        <h3>Printing Presses</h3>
+        <p>Komori Lithrone G40 — 5-color offset press with coater, up to 720×1,030mm sheet size. High-speed precision for medium to large runs.</p>
+        <p>Roland 700 Series — 4-color offset press. Renowned for consistent color reproduction.</p>
+        <p>KBA Press — German-engineered for premium quality.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:20px">
+      {["3× Automatic Die-Cutting Lines","2× High-Speed Folder-Gluer","Hot Foil Stamping Machines","UV & Lamination Equipment"].map((e) => (
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:16px;border-radius:8px;font-size:14px;color:#9ca3af">{e}</div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="cat-section">
+    <h2>Certifications</h2>
+    <div class="cat-certs">
+      {[{name:"ISO 9001:2015",desc:"Quality management system"},
+        {name:"FDA Food Contact",desc:"FDA 21 CFR compliant"},
+        {name:"EU Food Contact",desc:"EC 1935/2004 regulation"},
+        {name:"FSC Certified",desc:"Forest Stewardship Council"},
+      ].map((c) => (
+      <div class="cat-cert"><strong>{c.name}</strong><span>{c.desc}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Production Process -->
+  <section class="cat-section">
+    <h2>How We Work</h2>
+    <div class="cat-process">
+      {[{step:"01",title:"Inquiry & Quote",desc:"Send your design or describe your needs. We'll provide a quotation within 24 hours."},
+        {step:"02",title:"Design & Prepress",desc:"Our engineers create a production-ready dieline. Free pre-production sample included."},
+        {step:"03",title:"Printing & Finishing",desc:"Offset printing on Komori/Roland/KBA presses. All finishing done in-house."},
+        {step:"04",title:"Quality Control",desc:"Every box hand-inspected. 80+ craftsmen committed to zero defects."},
+        {step:"05",title:"Shipping & Delivery",desc:"Sea, air, or DDP to your door. We handle customs, duties, and logistics."},
+      ].map((s) => (
+      <div class="cat-step"><em>{s.step}</em><h4>{s.title}</h4><p>{s.desc}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="cat-section cat-contact">
+    <h2>Contact YMBOX</h2>
+    <div class="cat-contact-info">
+      <p><strong>Email:</strong> josh@ymys0769.com</p>
+      <p><strong>WhatsApp:</strong> +86 13532861588</p>
+      <p><strong>Address:</strong> Dongguan, Guangdong, China</p>
+      <p><strong>Website:</strong> ymboxs.com</p>
+    </div>
+    <p class="cat-tagline">Your box begins here.</p>
+  </section>
+</main>
+
+</BaseLayout>
+
+<style>
+.catalog-page{background:#fff;color:#1a1a2e;max-width:900px;margin:0 auto;padding:40px 24px}
+.catalog-print-btn{text-align:right;margin-bottom:20px}
+@media print{.catalog-print-btn{display:none}}
+.cat-cover{text-align:center;padding:60px 0 40px;border-bottom:2px solid #7C3AED}
+.cat-logo{height:64px;margin-bottom:24px}
+.cat-cover h1{font-family:"Plus Jakarta Sans",sans-serif;font-size:36px;font-weight:800;color:#1a1a2e;margin-bottom:8px}
+.cat-sub{font-size:16px;color:#6b7280}
+.cat-divider{width:60px;height:3px;background:#7C3AED;margin:24px auto 0}
+
+.cat-section{padding:40px 0;border-bottom:1px solid #e5e7eb;page-break-inside:avoid}
+.cat-section h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:24px;font-weight:700;color:#1a1a2e;margin-bottom:16px}
+.cat-section p{font-size:15px;color:#4b5563;line-height:1.8}
+.cat-section ul{list-style:none;padding:0}
+.cat-section li{font-size:14px;color:#4b5563;padding:4px 0}
+.cat-section li::before{content:"✓ ";color:#7C3AED;font-weight:700}
+
+.cat-stats{display:flex;justify-content:center;gap:32px;margin-top:24px;flex-wrap:wrap}
+.cat-stats div{text-align:center}
+.cat-stats strong{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:28px;font-weight:800;color:#7C3AED}
+.cat-stats span{font-size:13px;color:#6b7280}
+
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:16px}
+.cat-card{border:1px solid #e5e7eb;border-radius:8px;padding:20px}
+.cat-card h3{font-size:16px;font-weight:700;margin-bottom:12px}
+.cat-card-img{height:160px;overflow:hidden;border-radius:6px;margin-bottom:12px}
+.cat-card-img img{width:100%;height:100%;object-fit:cover}
+.cat-ph{height:100%;display:flex;align-items:center;justify-content:center;background:#f3f0ff;color:#7C3AED;font-weight:600;font-size:14px}
+
+.cat-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cat-2col h3{font-size:16px;font-weight:700;margin-bottom:8px}
+
+.cat-equip{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cat-equip-img{height:260px;overflow:hidden;border-radius:8px}
+.cat-equip-img img{width:100%;height:100%;object-fit:cover}
+.cat-equip-info h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.cat-equip-info p{font-size:14px;margin-bottom:8px}
+
+.cat-certs{display:flex;flex-wrap:wrap;gap:16px}
+.cat-cert{background:#f3f0ff;padding:14px 20px;border-radius:8px;display:flex;flex-direction:column}
+.cat-cert strong{font-size:15px;color:#1a1a2e}
+.cat-cert span{font-size:13px;color:#6b7280}
+
+.cat-process{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.cat-step{border:1px solid #e5e7eb;border-radius:8px;padding:20px}
+.cat-step em{font-family:"Plus Jakarta Sans",sans-serif;font-size:32px;font-weight:800;color:#7C3AED;opacity:0.3;font-style:normal;display:block}
+.cat-step h4{font-size:14px;font-weight:700;margin:8px 0 4px}
+.cat-step p{font-size:12px;color:#6b7280;line-height:1.5}
+
+.cat-contact{text-align:center;border-bottom:none}
+.cat-contact-info{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:16px 0}
+.cat-contact-info p{font-size:14px}
+.cat-tagline{font-family:"Plus Jakarta Sans",sans-serif;font-size:24px;font-weight:800;color:#7C3AED;margin-top:20px}
+
+@media(max-width:640px){.cat-grid{grid-template-columns:1fr}.cat-equip{grid-template-columns:1fr}.cat-2col{grid-template-columns:1fr}}
+</style>
