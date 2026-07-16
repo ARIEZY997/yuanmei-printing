@@ -50,18 +50,18 @@ const currentPath = "/products/";
 <span class="section-label">Client Cases</span>
 <h2 class="section-title">Trusted by Brands Worldwide</h2>
 <div class="case-grid">
-{[{client:"Five Seasons Farm",country:"Canada",product:"Strawberry punnets — foil stamping + matte coating, FDA compliant",note:"5,000 units · 12 days"},
-{client:"Luxury Candle Brand",country:"UK",product:"Collapsible gift boxes — magnetic closure + custom dividers",note:"500 units · 10 days"},
-{client:"QRA Foods",country:"India",product:"Christmas candle set boxes — PVC window + embossed logo",note:"3,000 units · Holiday deadline"},
-{client:"RISOK",country:"Japan",product:"Custom Greige paper boxes — spot UV + flush corners",note:"Precision Japanese spec"},
-{client:"ATELIERS OJA",country:"France",product:"Luxury chocolate boxes — solid core board + full lamination",note:"2,000 units · 7 days"},
-{client:"DTC Skincare Brand",country:"USA",product:"Mailer boxes — full-color exterior + branded interior print",note:"10,000 units · DDP to LA"},
+{[{industry:"Agriculture",client:"Five Seasons Farm",country:"Canada",need:"Needed FDA-compliant strawberry punnets with premium branding for retail shelves",solution:"Custom-printed punnets with gold foil stamping, matte coating, and tear-resistant structure. Delivered 5,000 units in 12 days."},
+{industry:"Luxury Retail",client:"Premium Candle Brand",country:"UK",need:"Magnetic closure gift boxes with custom-fit dividers for 3-candle sets",solution:"Collapsible rigid boxes with magnetic closure, velvet-lined interior fitments, and soft-touch matte finish. Produced 500 units in 10 days."},
+{industry:"Food & Beverage",client:"QRA Foods",country:"India",need:"Christmas-themed candle set boxes with product window and festive branding",solution:"PVC window boxes with embossed logo, burgundy color scheme, and gold foil accents. Delivered 3,000 units ahead of holiday deadline."},
+{industry:"Design & Retail",client:"RISOK",country:"Japan",need:"Minimalist packaging meeting strict Japanese quality standards — flush corners, precise color",solution:"270gsm Greige paper boxes with spot UV on brand mark only. Flush corners to 0.1mm tolerance. Every unit individually inspected."},
+{industry:"Confectionery",client:"ATELIERS OJA",country:"France",need:"Luxury chocolate packaging with premium tactile feel and gold interior",solution:"Solid core board rigid boxes with full matte lamination, gold foil interior lining, and magnetic closure. 2,000 units in 7 days."},
+{industry:"E-commerce",client:"DTC Skincare Brand",country:"USA",need:"Branded mailer boxes with tear strip and interior print for unboxing experience",solution:"Full-color exterior print with branded interior pattern. Tear strip for easy opening. 10,000 units via DDP sea freight to Los Angeles."},
 ].map((c) => (
 <article class="case-card">
-<div class="case-flag">{c.country}</div>
+<div class="case-flag">{c.industry} · {c.country}</div>
 <h3>{c.client}</h3>
-<p class="case-product">{c.product}</p>
-<p class="case-note">{c.note}</p>
+<p class="case-need"><strong>Need:</strong> {c.need}</p>
+<p class="case-solution"><strong>Solution:</strong> {c.solution}</p>
 </article>
 ))}
 </div>
@@ -94,8 +94,10 @@ const currentPath = "/products/";
 .case-card:hover{border-color:var(--purple-light)}
 .case-flag{display:inline-block;font-size:11px;letter-spacing:2px;color:var(--purple-light);text-transform:uppercase;margin-bottom:10px}
 .case-card h3{font-size:18px;font-weight:700;color:#e0dce8;margin-bottom:8px}
-.case-product{font-size:14px;color:var(--purple-light);margin-bottom:8px;line-height:1.5}
-.case-note{font-size:13px;color:#6b7280}
+.case-need{font-size:13px;color:#9ca3af;margin-bottom:6px;line-height:1.5}
+.case-need strong{color:#6b7280;font-weight:600}
+.case-solution{font-size:13px;color:var(--purple-light);line-height:1.5}
+.case-solution strong{color:#9ca3af;font-weight:600}
 .case-cta{text-align:center;margin-top:48px}
 .case-cta p{font-size:16px;color:#6b7280;margin-bottom:16px}
 
