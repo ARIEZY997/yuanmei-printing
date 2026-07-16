@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+const p = "/luxury-packaging-box-supplier/";
+---
+<BaseLayout title="Luxury Packaging Box Supplier China — YMBOX" description="YMBOX: premium luxury packaging box supplier. Custom rigid boxes, magnetic gift boxes, foil stamping. FDA & FSC certified. Dongguan China." lang="en" currentPath={p}>
+<Nav lang="en" currentPath={p} />
+<main class="page"><section class="page-hero"><div class="container"><h1>Luxury Packaging Box Supplier</h1><p>Premium custom boxes that elevate your brand — since 2008</p></div></section>
+<section class="section section-alt"><div class="container"><h2>Luxury Packaging Solutions</h2><div class="kw-grid">
+<div class="kw-card"><h3>Rigid Magnetic Boxes</h3><p>Premium presentation boxes with magnetic closure. Perfect for cosmetics, jewelry, watches, and luxury goods. Custom sizes and finishes available.</p></div>
+<div class="kw-card"><h3>Drawer Boxes</h3><p>Elegant sliding drawer design. Ideal for premium product launches, limited editions, and corporate gifts. Multiple compartments available.</p></div>
+<div class="kw-card"><h3>Book-Style Boxes</h3><p>Classic hinged lid with book-style opening. Popular for fragrance sets, gift collections, and luxury confectionery.</p></div>
+<div class="kw-card"><h3>Collapsible Gift Boxes</h3><p>Flat-packed for efficient shipping, assemble in seconds. Magnetic closure with custom interior fitments. Cost-effective luxury.</p></div>
+</div></div></section>
+<section class="section"><div class="container"><h2>Premium Finishes for Luxury Brands</h2><div class="kw-grid">
+{[{t:"Foil Stamping",d:"Gold, silver, rose gold, holographic foil. Adds instant luxury to any box."},{t:"Embossing & Debossing",d:"Raised or recessed designs. Tactile elegance that customers love to touch."},{t:"Soft Touch Coating",d:"Velvety matte finish. Guests can't stop touching it."},{t:"Spot UV",d:"Selective high-gloss highlights. Perfect for logos and design accents."}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><p>{s.d}</p></div>))}
+</div></div></section>
+<section class="section section-alt"><div class="container"><h2>Start Your Luxury Packaging Project</h2><p style="text-align:center;color:#9ca3af;margin-bottom:24px">Tell us about your vision. We'll make it real — free sample included.</p><div style="text-align:center"><a href="/contact/" class="btn btn-primary btn-ripple">Request a Quote</a></div></div></section>
+</main><Footer/>
+</BaseLayout>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}.section h2{font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:800;color:#e0dce8;margin-bottom:32px;text-align:center}.kw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.kw-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px}.kw-card h3{font-size:16px;font-weight:700;color:var(--purple-light);margin-bottom:12px}.kw-card p{font-size:14px;color:#9ca3af;line-height:1.7}.kw-card ul{list-style:none;padding:0}.kw-card li{font-size:14px;color:#9ca3af;padding:4px 0}.kw-card li::before{content:"→ ";color:var(--purple-light)}@media(max-width:640px){.page-hero h1{font-size:24px}}</style>

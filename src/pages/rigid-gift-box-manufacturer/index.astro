@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+const p = "/rigid-gift-box-manufacturer/";
+---
+<BaseLayout title="Rigid Gift Box Manufacturer China — YMBOX" description="YMBOX: rigid gift box manufacturer. Custom magnetic boxes, drawer boxes, luxury presentation boxes. Foil stamping, embossing. Dongguan China." lang="en" currentPath={p}>
+<Nav lang="en" currentPath={p} />
+<main class="page"><section class="page-hero"><div class="container"><h1>Rigid Gift Box Manufacturer</h1><p>Premium rigid boxes that make every unboxing memorable. Since 2008.</p></div></section>
+<section class="section section-alt"><div class="container"><h2>Rigid Box Types</h2><div class="kw-grid">
+{[{t:"Magnetic Closure",d:"Classic hinged lid with hidden magnets. Clean, modern, and satisfying to open and close."},{t:"Drawer Box",d:"Slide-out drawer design. Elegant reveal. Popular for watches, jewelry, and premium tech."},{t:"Lift-Off Lid",d:"Traditional two-piece rigid box. Maximum protection. Ideal for heavy or fragile luxury items."},{t:"Book-Style",d:"Opens like a hardcover book. Perfect for multi-piece gift sets and product collections."}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><p>{s.d}</p></div>))}
+</div></div></section>
+<section class="section"><div class="container"><h2>Rigid Box Specifications</h2><div class="kw-grid">
+{[{t:"Materials",i:["Grey board 1200-1800gsm","Wrapped in art paper or specialty paper","Magnetic closure hardware","Ribbon, elastic, or foam inserts"]},{t:"Customization",i:["Any size — up to 500×400mm","Full CMYK offset printing","Foil stamping, embossing, spot UV","Custom interior fitments"]},{t:"Production",i:["MOQ: 50-100 pieces","Sample: 5-7 working days","Production: 10-20 days","Hand-assembled and inspected"]}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><ul>{s.i.map((i)=><li>{i}</li>)}</ul></div>))}
+</div></div></section>
+<section class="section section-alt"><div class="container"><h2>Start Your Rigid Box Project</h2><p style="text-align:center;color:#9ca3af;margin-bottom:24px">Free sample · Low MOQ · 24h reply</p><div style="text-align:center"><a href="/contact/" class="btn btn-primary btn-ripple">Get Free Quote</a></div></div></section>
+</main><Footer/>
+</BaseLayout>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}.section h2{font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:800;color:#e0dce8;margin-bottom:32px;text-align:center}.kw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.kw-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px}.kw-card h3{font-size:16px;font-weight:700;color:var(--purple-light);margin-bottom:12px}.kw-card p{font-size:14px;color:#9ca3af;line-height:1.7}.kw-card ul{list-style:none;padding:0}.kw-card li{font-size:14px;color:#9ca3af;padding:4px 0}.kw-card li::before{content:"→ ";color:var(--purple-light)}@media(max-width:640px){.page-hero h1{font-size:24px}}</style>

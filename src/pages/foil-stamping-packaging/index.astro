@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+const p = "/foil-stamping-packaging/";
+---
+<BaseLayout title="Foil Stamping Packaging — Custom Box Manufacturer China" description="YMBOX: custom foil stamping packaging. Gold, silver, holographic foil on luxury boxes. Hot foil stamping, embossing. Free sample." lang="en" currentPath={p}>
+<Nav lang="en" currentPath={p} />
+<main class="page"><section class="page-hero"><div class="container"><h1>Foil Stamping Packaging</h1><p>Metallic elegance for your brand. Gold, silver, rose gold, and holographic foil stamping.</p></div></section>
+<section class="section section-alt"><div class="container"><h2>Our Foil Stamping Capabilities</h2><div class="kw-grid">
+{[{t:"Gold Foil",d:"Classic warm gold. The most popular choice for luxury cosmetics, spirits, and premium gift boxes. Timeless elegance."},{t:"Silver Foil",d:"Cool, modern silver. Perfect for tech products, minimalist brands, and contemporary packaging design."},{t:"Rose Gold Foil",d:"Warm pink-gold tone. Trending in beauty, jewelry, and feminine brand packaging. Instagram-ready."},{t:"Holographic Foil",d:"Rainbow-shifting metallic. Eye-catching and unique. Great for limited editions and youth-focused brands."}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><p>{s.d}</p></div>))}
+</div></div></section>
+<section class="section"><div class="container"><h2>Foil Stamping + Other Finishes</h2><div class="kw-grid">
+{[{t:"Foil + Embossing",d:"Combine foil stamping with raised embossing for a premium 3D metallic effect."},{t:"Foil + Soft Touch",d:"Metallic foil on a velvety matte background. Contrast that feels as good as it looks."},{t:"Foil + Spot UV",d:"Selective high-gloss areas alongside metallic foil. Maximum visual impact."},{t:"Foil Edge Gilding",d:"Metallic edge painting on thick rigid boxes. The ultimate luxury detail."}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><p>{s.d}</p></div>))}
+</div></div></section>
+<section class="section section-alt"><div class="container"><h2>Get Foil Stamping on Your Packaging</h2><p style="text-align:center;color:#9ca3af;margin-bottom:24px">Free sample · 50 pcs MOQ · All foil types in-house</p><div style="text-align:center"><a href="/contact/" class="btn btn-primary btn-ripple">Request Free Sample</a></div></div></section>
+</main><Footer/>
+</BaseLayout>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}.section h2{font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:800;color:#e0dce8;margin-bottom:32px;text-align:center}.kw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.kw-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px}.kw-card h3{font-size:16px;font-weight:700;color:var(--purple-light);margin-bottom:12px}.kw-card p{font-size:14px;color:#9ca3af;line-height:1.7}@media(max-width:640px){.page-hero h1{font-size:24px}}</style>

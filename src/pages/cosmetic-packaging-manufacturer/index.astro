@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+const p = "/cosmetic-packaging-manufacturer/";
+---
+<BaseLayout title="Cosmetic Packaging Box Manufacturer China — YMBOX" description="YMBOX: cosmetic packaging manufacturer. Custom skincare, makeup, perfume boxes. Foil stamping, embossing, magnetic closure. FDA & FSC. Free sample." lang="en" currentPath={p}>
+<Nav lang="en" currentPath={p} />
+<main class="page"><section class="page-hero"><div class="container"><h1>Cosmetic Packaging Manufacturer</h1><p>Beauty deserves beautiful packaging. Custom boxes for cosmetics, skincare, and fragrance.</p></div></section>
+<section class="section section-alt"><div class="container"><h2>Cosmetic Packaging Expertise</h2><div class="kw-grid">
+<div class="kw-card"><h3>Skincare Boxes</h3><p>Serum, cream, and mask packaging. Rigid boxes with custom inserts to hold glass bottles securely.</p></div>
+<div class="kw-card"><h3>Makeup Packaging</h3><p>Lipstick, eyeshadow palette, and compact boxes. Magnetic closure and mirror inserts available.</p></div>
+<div class="kw-card"><h3>Perfume & Fragrance</h3><p>Premium rigid boxes with satin lining. Foil stamping and embossing for luxury presentation.</p></div>
+<div class="kw-card"><h3>Gift Sets</h3><p>Multi-compartment boxes for cosmetic collections. Custom-fit foam or card inserts.</p></div>
+</div></div></section>
+<section class="section"><div class="container"><h2>Materials & Finishes for Beauty Brands</h2><div class="kw-grid">
+{[{t:"Luxury Finishes",i:["Gold & silver foil stamping","Soft touch matte coating","High-gloss spot UV","Blind embossing (no color)","Holographic foil accents"]},{t:"Interior Options",i:["Velvet / satin lining","Custom-fit foam inserts","Cardboard partitions","Magnetic flaps","Ribbon pulls"]},{t:"Material Options",i:["Rigid grey board 1200gsm","Coated art paper","Kraft (eco-friendly)","Recycled paperboard","FSC-certified stock"]}].map((s)=>(<div class="kw-card"><h3>{s.t}</h3><ul>{s.i.map((i)=><li>{i}</li>)}</ul></div>))}
+</div></div></section>
+<section class="section section-alt"><div class="container"><h2>Let's Create Your Cosmetic Packaging</h2><p style="text-align:center;color:#9ca3af;margin-bottom:24px">Free sample · 24h reply · 50 pcs MOQ</p><div style="text-align:center"><a href="/contact/" class="btn btn-primary btn-ripple">Get Free Quote</a></div></div></section>
+</main><Footer/>
+</BaseLayout>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}.section h2{font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:800;color:#e0dce8;margin-bottom:32px;text-align:center}.kw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.kw-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px}.kw-card h3{font-size:16px;font-weight:700;color:var(--purple-light);margin-bottom:12px}.kw-card p{font-size:14px;color:#9ca3af;line-height:1.7}.kw-card ul{list-style:none;padding:0}.kw-card li{font-size:14px;color:#9ca3af;padding:4px 0}.kw-card li::before{content:"→ ";color:var(--purple-light)}@media(max-width:640px){.page-hero h1{font-size:24px}}</style>
