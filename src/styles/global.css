@@ -466,6 +466,27 @@ main {
   }
 }
 
+/* ═══ IMAGE PLACEHOLDER MODE ═══ */
+/* When images are offline, show gradient placeholders */
+img:not(.hb-logo):not(.hs-logo):not(.hn-logo):not(.logo-img):not(.keep-img) {
+  display: none !important;
+}
+/* Placeholder replacement for image containers */
+.cmyk-visual, .craft-img, .np-img, .cert-img-wrap, .story-img, .cat-card-img, .cat-equip-img {
+  background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(74,29,139,0.08)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 200px !important;
+}
+.cmyk-visual::after, .craft-img::after, .np-img::after, .cert-img-wrap::after, .story-img::after, .cat-card-img::after, .cat-equip-img::after {
+  content: "Image offline";
+  color: rgba(124,58,237,0.3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
 /* Cookie Consent */
 .cookie-banner {
   position: fixed;
