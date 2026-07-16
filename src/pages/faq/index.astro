@@ -4,7 +4,7 @@ import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 import en from "../../i18n/en.json";
 const t = en;
-const currentPath = "/en/faq/";
+const currentPath = "/faq/";
 ---
 
 <BaseLayout title="FAQ — Yuanmei Printing" description="Frequently asked questions about custom packaging. MOQ, materials, production time, shipping, samples, certifications." lang="en" currentPath={currentPath}>
@@ -18,8 +18,17 @@ const currentPath = "/en/faq/";
 {t.home.faq.items.map((item:any) => (
 <details class="faq-item"><summary class="faq-q">{item.question}</summary><div class="faq-a"><p>{item.answer}</p></div></details>
 ))}
+{[{q:"How do I choose a packaging manufacturer in China?",a:"Look for three things: factory photos (real ones, not stock images), certifications (ISO, FDA, FSC), and a responsive sales team. At YMBOX, we encourage factory visits and provide free samples so you can verify quality before committing. We also offer video calls to walk you through our production floor."},
+{q:"What is the difference between folding carton and rigid box?",a:"Folding cartons are shipped flat and assembled by the end user. Rigid boxes are pre-assembled — thick, premium, and non-collapsible. Folding cartons are more cost-effective for light products; rigid boxes are for luxury goods that need protection and presentation."},
+{q:"Can you match a specific Pantone color for my packaging?",a:"Yes. We use Pantone matching on all offset presses. Send us your Pantone code and we'll match it precisely. We also provide a digital proof before production so you can approve the color accuracy."},
+{q:"What file formats do you accept for artwork?",a:"We accept AI (Adobe Illustrator), PDF, CDR (CorelDRAW), and EPS. Please include 3mm bleed, outline all fonts, and use CMYK color mode. Our prepress team will review your file and notify you of any issues before printing."},
+{q:"Can you do both the box and the inner trays/inserts?",a:"Yes — we manufacture both the outer box and custom interior fitments (foam, card, velvet). This ensures perfect fit between the box and insert, and saves you the trouble of sourcing from two suppliers."},
+{q:"How do I get started with my first order?",a:"Send us your design idea, dimensions, and quantity. We'll provide a quotation within 24 hours. If you don't have a design yet, our engineers can create one from your product specifications. We'll produce a free sample for your approval before moving to full production."},
+].map((item) => (
+<details class="faq-item"><summary class="faq-q">{item.q}</summary><div class="faq-a"><p>{item.a}</p></div></details>
+))}
 </div>
-<div class="faq-cta"><p>Still have questions?</p><a href="/en/contact/" class="btn btn-primary btn-ripple">Contact Us</a></div>
+<div class="faq-cta"><p>Still have questions?</p><a href="/contact/" class="btn btn-primary btn-ripple">Contact Us</a></div>
 </div>
 </section>
 </main>
