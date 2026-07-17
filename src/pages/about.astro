@@ -2,63 +2,54 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import en from "../i18n/en.json"; const t = en; const p = "/about/";
+const p = "/about/";
+const printers = [
+  {t:"Komori Lithrone G40",d:"5-color offset press with inline coater. Max sheet: 720x1030mm. Speed: 15,000 sheets/hour. Advanced color management with closed-loop density control.",img:"/images/小森.webp"},
+  {t:"Roland 700 Series",d:"4-color offset press. Max sheet: 740x1040mm. Speed: 16,000 sheets/hour. Quick job changeover with PECOM automation. Consistent color across short to medium runs.",img:"/images/罗兰.webp"},
+  {t:"KBA Press",d:"German-engineered offset press. Max sheet: 720x1050mm. Speed: 15,000 sheets/hour. Precision inking for flawless solids and vignettes.",img:"/images/高爆.webp"},
+  {t:"1100 & 600 Auto Waste Stripping",d:"Automatic waste removal for die-cut sheets. Handles up to 1100mm and 600mm widths. Pneumatic stripping pins with adjustable timing. Eliminates manual labor.",img:"/images/auto-strip.webp"},
+];
+const finishers = [
+  {t:"Hot Foil Stamping",d:"Gold, silver, rose gold, holographic. All in-house for consistent quality and fast turnaround.",img:null},
+  {t:"Embossing & Debossing",d:"Raised or recessed 3D effects. Tactile elegance that customers love to touch.",img:null},
+  {t:"Spot UV",d:"Selective high-gloss highlights. Perfect for logos and design accents.",img:null},
+  {t:"Matte / Gloss Lamination",d:"Full-sheet coating. Protects print while enhancing texture and durability.",img:null},
+  {t:"Soft Touch Coating",d:"Velvety matte finish. Guests can't stop touching it.",img:null},
+  {t:"Die Cutting & Creasing",d:"3 automatic lines. Custom shapes, windows, and precision creasing.",img:null},
+  {t:"Gluing & Assembly",d:"2 high-speed folder-gluer lines with auto inspection. Hand-finishing for luxury structures.",img:null},
+];
+const qc = [
+  {t:"Structural Design",d:"Engineers create production-ready dielines from your concept. Precise to 0.1mm.",img:null},
+  {t:"CTP Plate Making",d:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction.",img:null},
+  {t:"Color Management",d:"Pantone matching on all presses. Digital proofs sent before production begins.",img:null},
+  {t:"Quality Control",d:"Incoming material checks, in-process QC, and final hand-inspection. Every box checked.",img:null},
+];
 ---
-<BaseLayout title="About & Capabilities — YMBOX" description="YMBOX: custom packaging manufacturer since 2008. 5 presses, 80+ craftsmen, 40+ countries. ISO 9001, FDA, FSC certified. Full in-house production." lang="en" currentPath={p}>
+
+<BaseLayout title="About & Capabilities - YMBOX" description="YMBOX: custom packaging manufacturer since 2007. 10,000 sqm, 300+ employees. ISO 9001, FSC, SMETA, BSCI, GRS, FDA certified." lang="en" currentPath={p}>
 <Nav lang="en" currentPath={p} />
-<main class="page"><section class="page-hero"><div class="container"><h1>About YMBOX</h1><p>18 years. One factory. Full control from dieline to delivery.</p></div></section>
+<main class="page"><section class="page-hero"><div class="container"><h1>About YMBOX</h1><p>Est. 2007. 10,000 sqm facility. 300+ employees. Trusted by Disney, Walmart, Target.</p></div></section>
 
-<!-- Story -->
 <section class="section section-alt"><div class="container"><div class="story-layout">
-<div class="story-content"><span class="s-label">Our Story</span><h2>From Dongguan to the world</h2><p>Founded in 2008 in China's manufacturing heartland, YMBOX has grown from a small workshop into a trusted packaging partner for brands across 40+ countries. We combine traditional craftsmanship with modern printing technology — Komori, Roland, and KBA presses running daily for consistent output.</p></div>
-<div class="story-img"><div class="img-ph">Factory Photo</div></div>
+<div class="story-content"><span class="s-label">Our Story</span><h2>From Dongguan to the world</h2><p>Founded in 2007, YMBOX operates a 10,000 square meter facility in Dongguan. With over 300 skilled employees and a dedicated R&D team, we've grown from a small workshop into a trusted packaging partner for global brands including Disney, Walmart, and Target.</p></div>
+<div class="story-img"><div class="story-video-wrap"><iframe src="https://www.youtube.com/embed/CfrnGgLBiAA?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=CfrnGgLBiAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="YMBOX factory"></iframe></div></div>
 </div></div></section>
 
-<!-- Stats -->
-<!-- Printing -->
 <section class="section"><div class="container"><span class="s-label">Printing</span><h2>Equipment & Capabilities</h2>
-<div class="cap-grid">{[{t:"Komori Lithrone G40",d:"5-color offset press with coater. Sheet size up to 720×1,030mm. High-speed precision for medium to large production runs."},{t:"Roland 700 Series",d:"4-color offset press. Quick job changeover for short to medium runs. Trusted globally for print quality."},{t:"KBA Press",d:"German-engineered for premium quality. Ideal for high-end packaging that demands flawless color reproduction."}].map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}
-</div></div></section>
+<div class="equip-list">{printers.map((m)=>(<div class="equip-row"><div class="equip-img"><img src={m.img} alt={m.t}/></div><div class="equip-info"><h3>{m.t}</h3><p>{m.d}</p></div></div>))}</div></div></section>
 
-<!-- Finishing -->
-<section class="section section-alt"><div class="container"><span class="s-label">Finishing & Post-Press</span><h2>Under one roof</h2>
-<div class="cap-grid">{["Hot Foil Stamping — Gold, silver, rose gold, holographic","Spot UV — Selective high-gloss highlights","Embossing & Debossing — Raised or recessed 3D effects","Matte / Gloss Lamination — Full-sheet coating","Soft Touch — Velvety matte finish","Die Cutting — 3 automatic lines, custom shapes","Gluing — 2 high-speed folder-gluer lines","Hand Assembly — For complex luxury structures"].map((d)=>(<div class="cap-card"><p>{d}</p></div>))}
-</div></div></section>
-
-<!-- Prepress -->
-<section class="section"><div class="container"><span class="s-label">Prepress & QC</span><h2>Precision from start to finish</h2>
-<div class="cap-grid">{[{t:"Structural Design",d:"Engineers create production-ready dielines from your concept — precise to 0.1mm."},{t:"CTP Plate Making",d:"Computer-to-plate. Direct laser imaging for razor-sharp dot reproduction."},{t:"Color Management",d:"Pantone matching on all presses. Digital proofs before production."},{t:"Quality Control",d:"Incoming material checks, in-process QC, and final hand-inspection. Every box checked."}].map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}
-</div></div></section>
-
-<!-- Certifications -->
 <section class="section section-alt"><div class="container"><span class="s-label">Certifications</span><h2>Quality you can trust</h2>
-<div class="cert-row">{["ISO 9001:2015 — Quality management system","FDA Food Contact — FDA 21 CFR compliant","EU Food Contact — EC 1935/2004 regulation","FSC Certified — Forest Stewardship Council"].map((c)=>(<div class="cert-badge">{c}</div>))}
-</div><div style="text-align:center;margin-top:32px"><a href="/certificates/" class="btn btn-outline-white">View Certificates →</a></div></div></section>
+<div class="cert-grid-large">
+{[{name:"FSC Certified",desc:"Forest Stewardship Council chain-of-custody. Paper sourced from responsibly managed forests.",img:"/images/cert-fsc.webp"},{name:"SMETA / SEDEX",desc:"Members Ethical Trade Audit. Labor standards, health & safety, business ethics.",img:"/images/cert-smeta.webp"},{name:"ISO 9001:2015",desc:"International quality management standard. Consistent processes from inquiry to delivery.",img:"/images/cert-smeat-2-.webp"},{name:"Disney / FAMA Certified",desc:"Disney supply chain audit compliance. Authorized manufacturing facility meeting international production and safety standards.",img:"/images/cert-disney.webp"},{name:"International Certification",desc:"Global compliance certification for export-quality packaging manufacturing.",img:"/images/cert-艾尔弗国际认证.webp"}].map((c)=>(<div class="cert-card-lg"><div class="cert-card-img"><img src={c.img} alt={c.name}/></div><div class="cert-card-body"><h3>{c.name}</h3><p>{c.desc}</p></div></div>))}
+</div></div></section>
 
-<!-- CTA -->
-<section class="section cta-end"><div class="container" style="text-align:center"><h2>Ready to start your project?</h2><p style="color:#9ca3af;margin-bottom:24px">Free sample · 24h reply · 50 pcs MOQ</p><a href="/contact/" class="btn btn-primary btn-ripple">Get Free Quote</a></div></section>
+<section class="section"><div class="container"><span class="s-label">Production Process</span><h2>Under one roof</h2>
+<div class="cap-grid">{finishers.concat(qc).map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}</div></div></section>
+
+<section class="section section-alt"><div class="container"><span class="s-label">Product Portfolio</span><h2>What we deliver</h2>
+<div class="cap-grid">{[{t:"Color Cards & Material Swatches",d:"Comprehensive color fan decks and material sample books. High-fidelity swatch cards for accurate color matching and material selection."},{t:"Packaging Inserts & Functional Cards",d:"Instruction manuals, warranty cards, and promotional inserts. Custom hang tags, labels, and branded packaging accessories."},{t:"Premium Finishes & Coatings",d:"Advanced surface treatments: UV spot coating, embossing/debossing, foil stamping, matte/gloss lamination. Eco-friendly water-based coatings and sustainable finish options."},{t:"Bespoke Customization",d:"Tailored solutions for size, shape, material, and printing specifications. End-to-end service from design consultation to mass production."}].map((m)=>(<div class="cap-card"><h3>{m.t}</h3><p>{m.d}</p></div>))}</div></div></section>
+
+<section class="section cta-end"><div class="container" style="text-align:center"><h2>Ready to start your project?</h2><p style="color:#9ca3af;margin-bottom:24px">Free sample / 24h reply / 50 pcs MOQ</p><a href="/contact/" class="btn btn-primary btn-ripple">Get Free Quote</a></div></section>
 </main><Footer/>
 </BaseLayout>
-
-<style>
-.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}
-.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.s-label{font-size:13px;text-transform:uppercase;letter-spacing:4px;color:var(--purple-light);margin-bottom:12px;display:block;font-weight:600}
-.section h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);font-weight:800;color:#e0dce8;margin-bottom:32px}
-
-.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.story-content p{font-size:16px;color:#9ca3af;line-height:1.8;margin-top:12px}
-.img-ph{height:300px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(74,29,139,0.04));border-radius:16px;color:rgba(124,58,237,0.25);font-weight:700;font-size:16px}
-
-.wu-bar{background:var(--purple);padding:36px 0}.wu-inner{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}.wu-s{text-align:center}.wu-s em{display:block;font-family:var(--font-display);font-style:normal;font-weight:800;font-size:32px;color:var(--white)}.wu-s span{font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:1px}
-
-.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.cap-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px}.cap-card h3{font-size:15px;font-weight:700;color:var(--purple-light);margin-bottom:6px}.cap-card p{font-size:14px;color:#9ca3af;line-height:1.6}
-
-.cert-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.cert-badge{padding:14px 24px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.15);border-radius:8px;font-size:14px;color:var(--purple-light)}
-
-.cta-end h2{font-family:var(--font-display);font-size:32px;font-weight:800;color:#e0dce8;margin-bottom:8px}
-
-@media(max-width:768px){.story-layout{grid-template-columns:1fr}.page-hero h1{font-size:28px}}
-@media(max-width:640px){.wu-inner{gap:20px}.wu-s em{font-size:24px}}
-</style>
+<style>.page{background:#0a0a0f;color:#e0dce8}.page-hero{padding:140px 0 64px;background:linear-gradient(135deg,var(--purple-bg),#2D1250);color:var(--white);text-align:center}.page-hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:800;margin-bottom:12px}.page-hero p{font-size:17px;color:#94a3b8}.section{padding:80px 0}.section-alt{background:#110d1a}.container{max-width:1100px;margin:0 auto;padding:0 24px}.s-label{font-size:13px;text-transform:uppercase;letter-spacing:4px;color:var(--purple-light);margin-bottom:12px;display:block;font-weight:600}.section h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);font-weight:800;color:#e0dce8;margin-bottom:32px}.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.story-content p{font-size:16px;color:#9ca3af;line-height:1.8;margin-top:12px}.story-img{min-height:300px;border-radius:16px;overflow:hidden}.story-video-wrap{position:relative;padding-bottom:160%;height:0;max-width:360px;margin:0 auto}.story-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}.equip-list{display:flex;flex-direction:column;gap:28px}.equip-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden}.equip-img{height:340px;overflow:hidden}.equip-img img{width:100%;height:100%;object-fit:cover}.equip-info{padding:28px}.equip-info h3{font-size:20px;font-weight:700;color:var(--purple-light);margin-bottom:10px}.equip-info p{font-size:15px;color:#9ca3af;line-height:1.7}.cert-grid-large{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}.cert-card-lg{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.cert-card-img{height:380px;overflow:hidden}.cert-card-img img{width:100%;height:100%;object-fit:cover}.cert-card-body{padding:20px 24px 24px}.cert-card-body h3{font-size:16px;font-weight:700;color:var(--purple-light);margin-bottom:4px}.cert-card-body p{font-size:13px;color:#9ca3af;line-height:1.5}.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.cap-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px}.cap-card h3{font-size:15px;font-weight:700;color:var(--purple-light);margin-bottom:6px}.cap-card p{font-size:14px;color:#9ca3af;line-height:1.6}.cta-end h2{font-family:var(--font-display);font-size:32px;font-weight:800;color:#e0dce8;margin-bottom:8px}@media(max-width:768px){.story-layout{grid-template-columns:1fr}.equip-row{grid-template-columns:1fr}.equip-img{height:240px}.cert-card-img{height:220px}.page-hero h1{font-size:28px}}</style>

@@ -25,25 +25,33 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
       </div>
       <!-- Sparkle dots -->
       <div class="hb-sparkles">
-        {Array.from({length:25}).map(()=>(<span class="hb-spark" style={`left:${60+Math.random()*35}%;top:${5+Math.random()*85}%;animation-delay:${Math.random()*4}s;width:${1+Math.random()*3}px;height:${1+Math.random()*3}px`}></span>))}
+        {Array.from({length:40}).map(()=>(<span class="hb-spark" style={`left:${Math.random()*90}%;top:${5+Math.random()*85}%;animation-delay:${Math.random()*4}s;width:${1+Math.random()*3}px;height:${1+Math.random()*3}px`}></span>))}
       </div>
       <div class="hb-content">
+        <div class="hb-left">
         <div class="hb-logo-ring">
           <img src="/images/公司LOGO.webp" alt="Yuanmei Printing" class="hb-logo" />
         </div>
         <h1>We<br>Make<br>Boxes<span class="hb-dot">.</span></h1>
         <div class="hb-line"></div>
-        <p class="hb-sub">Dongguan, China · Custom packaging since 2008</p>
+        <p class="hb-sub">Dongguan, China · Custom packaging since 2007</p>
         <div class="hb-action">
         <a href="/contact/" class="hb-cta">Start Your Project</a>
         <div class="hb-stats-art">
-          <div class="hbs-item"><em>18+</em><span>Years</span></div>
+          <div class="hbs-item"><em>10K</em><span>m2 Facility</span></div>
+          <div class="hbs-item"><em>300+</em><span>Employees</span></div>
           <div class="hbs-item"><em>5</em><span>Presses</span></div>
-          <div class="hbs-item"><em>80+</em><span>Craftsmen</span></div>
           <div class="hbs-item"><em>40+</em><span>Countries</span></div>
         </div>
       </div>
-      <div class="hb-scroll">↓</div>
+      </div>
+        <div class="hb-right">
+          <div class="hb-video-wrap">
+            <iframe src="https://www.youtube.com/embed/Uyb2B8w7aWA?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=Uyb2B8w7aWA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="YMBOX factory"></iframe>
+          </div>
+        </div>
+      </div>
+        <div class="hb-scroll">↓</div>
     </section>
 
 <!-- ═══ FACTORY VIDEO ═══ -->
@@ -96,7 +104,7 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 <section id="products-section" class="n-section products-narrative">
   <div class="section-sticky-header"><span class="n-label">What We Make</span><h2>Packaging that <span class="accent">sells before it's opened</span></h2></div>
   <div class="product-narrative-grid">
-    {t.products.categories.map((cat:any,i:number)=>{const pi=["/images/部分产品图.webp","/images/部分产品图2.webp",null,null];return(
+    {t.products.categories.map((cat:any,i:number)=>{const pi=["/images/food.webp","/images/giftbox.webp","/images/corrugated-shipping boxes.webp","/images/color cards-inserts.webp"];return(
     <div class="narrative-product-card">
       <div class="np-img">{pi[i]?<img src={pi[i]} alt={cat.title} class="np-real-img"/>:<div class="np-placeholder">{cat.title}</div>}</div>
       <div class="np-body"><h3>{cat.title}</h3><p>{cat.description}</p><ul>{cat.items.map((item:string)=><li>{item}</li>)}</ul></div>
@@ -164,7 +172,13 @@ const faqSD = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
 /* ── Hero: Brutal Typography ── */
 .hero-brutal{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a0a0f;padding:80px 24px}
 .hb-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(124,58,237,0.06) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(74,29,139,0.04) 0%,transparent 50%)}
-.hb-content{position:relative;z-index:1;max-width:1000px;width:100%}
+.hb-content{position:relative;z-index:1;max-width:1200px;width:100%;display:flex;align-items:center;gap:48px}
+.hb-left{flex:1}
+.hb-right{flex:0 0 360px}
+.hb-video-wrap{position:relative;padding-bottom:160%;height:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.hb-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+@media(max-width:900px){.hb-content{flex-direction:column;gap:32px}.hb-right{flex:0 0 auto;width:100%;max-width:300px}}
+@media(max-width:640px){.hb-right{max-width:240px}}
 .hb-logo-ring{width:100px;height:100px;border-radius:50%;overflow:hidden;margin-bottom:40px;border:2px solid rgba(124,58,237,0.3);box-shadow:0 0 30px rgba(124,58,237,0.2)}
 .hb-logo{width:100%;height:100%;object-fit:contain;background:var(--white);padding:8px}
 .hb-overline{font-size:12px;letter-spacing:4px;color:var(--purple-light);text-transform:uppercase;margin-bottom:32px}

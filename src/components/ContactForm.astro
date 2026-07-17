@@ -21,12 +21,9 @@ interface Props {
 const { form } = Astro.props;
 ---
 
-<form name={form.netlifyFormName} method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-  <input type="hidden" name="form-name" value={form.netlifyFormName} />
-  <p class="hidden" style="display:none;">
-    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-  </p>
-
+<form action="https://formspree.io/f/mqerpbyj" method="POST" class="contact-form">
+  <input type="hidden" name="_next" value="https://ymboxs.vercel.app/success/" />
+  <input type="text" name="_gotcha" style="display:none" />
   <div class="form-row">
     <div class="form-group">
       <label for="name">{form.name} *</label>
