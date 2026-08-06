@@ -24,54 +24,63 @@ collections:
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: about
         label: About Page SEO
         file: src/pages/about.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: products
         label: Products Page SEO
         file: src/pages/products.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: folding-carton
         label: "Product: Folding Carton"
         file: src/pages/custom-folding-carton-manufacturer/index.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: luxury-box
         label: "Product: Luxury Packaging"
         file: src/pages/luxury-packaging-box-supplier/index.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: cosmetic-packaging
         label: "Product: Cosmetic Packaging"
         file: src/pages/cosmetic-packaging-manufacturer/index.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: foil-stamping
         label: "Product: Foil Stamping"
         file: src/pages/foil-stamping-packaging/index.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: rigid-box
         label: "Product: Rigid Gift Box"
         file: src/pages/rigid-gift-box-manufacturer/index.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: contact
         label: Contact Page SEO
         file: src/pages/contact.astro
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+          - { name: seo_keywords, label: "Keywords (K)", widget: string, required: false }
       - name: global
         label: Global Site SEO
         file: src/i18n/en.json
