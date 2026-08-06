@@ -17,24 +17,17 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "SEO Title (T)", name: "seo_title", widget: "string", required: false }
-      - { label: "Meta Description (D)", name: "seo_description", widget: "text", required: false }
-      - { label: "Keywords (K)", name: "seo_keywords", widget: "string", required: false }
+      - { label: "SEO Title", name: "seo_title", widget: "string", required: false }
+      - { label: "Meta Description", name: "seo_description", widget: "text", required: false }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "settings"
-    label: "Site TDK Settings"
-    extension: "json"
-    format: "json"
+  - name: "pages"
+    label: "Pages"
     files:
       - name: "seo"
-        label: "Global SEO"
+        label: "Site SEO Settings"
         file: "src/i18n/en.json"
         fields:
-          - { label: "Site Title (T)", name: "title", widget: "string" }
-          - { label: "Meta Description (D)", name: "description", widget: "text" }
-          - { label: "Keywords (K)", name: "keywords", widget: "string", required: false }
-
-local_backend: false
-publish_mode: editorial_workflow
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
