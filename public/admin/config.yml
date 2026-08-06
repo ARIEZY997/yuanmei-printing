@@ -36,6 +36,36 @@ collections:
         fields:
           - { name: seo_title, label: "Title (T)", widget: string, required: false }
           - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+      - name: folding-carton
+        label: "Product: Folding Carton"
+        file: src/pages/custom-folding-carton-manufacturer/index.astro
+        fields:
+          - { name: seo_title, label: "Title (T)", widget: string, required: false }
+          - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+      - name: luxury-box
+        label: "Product: Luxury Packaging"
+        file: src/pages/luxury-packaging-box-supplier/index.astro
+        fields:
+          - { name: seo_title, label: "Title (T)", widget: string, required: false }
+          - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+      - name: cosmetic-packaging
+        label: "Product: Cosmetic Packaging"
+        file: src/pages/cosmetic-packaging-manufacturer/index.astro
+        fields:
+          - { name: seo_title, label: "Title (T)", widget: string, required: false }
+          - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+      - name: foil-stamping
+        label: "Product: Foil Stamping"
+        file: src/pages/foil-stamping-packaging/index.astro
+        fields:
+          - { name: seo_title, label: "Title (T)", widget: string, required: false }
+          - { name: seo_desc, label: "Description (D)", widget: text, required: false }
+      - name: rigid-box
+        label: "Product: Rigid Gift Box"
+        file: src/pages/rigid-gift-box-manufacturer/index.astro
+        fields:
+          - { name: seo_title, label: "Title (T)", widget: string, required: false }
+          - { name: seo_desc, label: "Description (D)", widget: text, required: false }
       - name: contact
         label: Contact Page SEO
         file: src/pages/contact.astro
