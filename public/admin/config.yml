@@ -3,6 +3,8 @@ backend:
   repo: ARIEZY997/yuanmei-printing
   branch: master
   base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
+  client_id: Ov23lihQkBP0O5pz8LBj
 
 media_folder: "public/images"
 public_folder: "/images"
