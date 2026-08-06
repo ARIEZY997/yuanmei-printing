@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><title>YMBOX CMS</title></head>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>YMBOX CMS</title></head>
 <body>
-<div id="status" style="font-family:sans-serif;text-align:center;margin-top:80px;font-size:18px;color:#333">Loading CMS...</div>
 <script src="/admin/decap-cms.js"></script>
-<script>
-setTimeout(function(){
-  if(typeof DecapCms!=='undefined'){
-    document.getElementById('status').textContent='Initializing...';
-    try{DecapCms.init()}catch(e){document.getElementById('status').innerHTML='Error: '+e.message}
-  }else{
-    document.getElementById('status').innerHTML='JS not loaded. Check F12 console.'
-  }
-},2000)
-</script>
+<script>DecapCms.init()</script>
 </body>
 </html>
