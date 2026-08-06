@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: ARIEZY997/yuanmei-printing
+  branch: master
+  base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
+  client_id: Ov23lihQkBP0O5pz8LBj
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "SEO Title", name: "seo_title", widget: "string", required: false }
+      - { label: "Meta Description", name: "seo_description", widget: "text", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "seo"
+        label: "Site SEO Settings"
+        file: "src/i18n/en.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
